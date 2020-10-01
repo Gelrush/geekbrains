@@ -34,14 +34,26 @@ int even(int *arr, int len) {
 	return count ? 1 : 0;
 }
 								// type conversion
-void asShortPrint(unsigned int *a, int len) {
-		for (short i = 0; i < len * 2; ++i)
-			printf("%hu,", *(a + i)); 
+void asShortPrint(unsigned *a, int len) {
+	// num				- 11010011000110
+	// %hu num			- 1000110
+	// num >> 7 		- 00000001101001
+	// %hu (num >> 7)	- 1101001
+
+	for (int i = 0; i < len; ++i) {
+		printf("%2hu,%2hu,", *(a + i), *(a + i) >> 16);
+	}
+
+	unsigned short *res = a;
+	printf("\n");
+	for (int i = 0; i < len * 2; ++i) {
+		printf("%2hu,", *(res + i));
+	}
 }
 
 int main(int argc, char const *argv[])
 {
-	/*					// Exercise 1 
+						// Exercise 1 
 	double x1, x2;
 	int adds[3];
 	printf("Введите коэффициенты квадратного уравнения (a, b, c):\n");
@@ -75,10 +87,10 @@ int main(int argc, char const *argv[])
 		for (int i = 0; i < ARRAY_LENGTH; ++i)
 			printf("%3d,", arr[i]);
 	else printf("В массиве нет нечетных чисел");
-	printf("\n");*/
 	
 						// Exercise 3
 	unsigned int a[] = {0, 1, 2, 3, 4, 65541, 65542, 65543, 65544, 65545};
+	printf("\nПреобразование разрядности чисел:\n");
 	asShortPrint(a, 10);
 
 	return 0;
