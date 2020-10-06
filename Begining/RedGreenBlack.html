@@ -1,0 +1,38 @@
+<meta charset="utf-8">
+<script>
+
+var arr = [];
+var maxRed = 0; var Red = 0;
+var maxBlack = 0; var Black = 0;
+var maxZerro = 0; var Zerro = 0;
+var round = parseInt(prompt('Введите количество раундов'));
+
+for (var i=0; i<round; i++) {
+	arr.push(Math.round(Math.random()*2-1));
+	if (arr[i] == -1) Black++;
+	else if (Black > maxBlack) {
+		maxBlack = Black;
+		Black = 0;
+	}
+
+	if (arr[i] == 0) Zerro++;
+	else if (Zerro > maxZerro) {
+		maxZerro = Zerro;
+		Zerro = 0;
+	}
+
+	if (arr[i] == 1) Red++;
+	else if (Red > maxRed) {
+		maxRed = Red;
+		Red = 0;
+	}
+}
+
+alert(arr);
+
+alert('Максимальное количество подряд черных: ' + maxBlack);
+alert('Максимальное количество подряд красных: ' + maxRed);
+alert('Максимальное количество подряд нулей: ' + maxZerro);
+
+
+</script>

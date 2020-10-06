@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<script>
+
+	var money = parseInt(prompt('Deposit:'));
+	var percent = parseInt(prompt('Interest rate:'));
+	var year = parseInt(prompt('Temp of deposit:'));
+
+	if (isNaN(money) && isNaN(year) && isNaN(percent))
+		alert('Not number entered...');
+	else for (var i=1; i<=year; i++) {
+		money = money * (percent/100+1);
+		alert('Прошло лет: ' + i + ', сумма на счету:' + money);
+	}
+
+
+</script>

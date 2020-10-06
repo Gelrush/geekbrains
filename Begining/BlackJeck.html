@@ -1,0 +1,72 @@
+<meta charset="utf-8">
+<script>
+
+function getRandomNum(min, max) {
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function getCart() {
+	var carts = ['6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+	return carts[getRandomNum(0, carts.length -1)];
+}
+
+function getSum(arr) {
+	var summ = 0;
+	for (var i = 0; i < arr.length; i++) {
+		var a = arr[i];
+		if (a == 'J' || a == 'Q' || a == 'K')
+			summ += 10;
+		if (!isNaN(a))
+			summ += parseInt(a);
+	}
+
+	for (var i = 0; i < arr.length; i++) {
+		var a = arr[i];
+		if (a == 'A')
+			if (summ <= 10)
+				summ += 11;
+			else summ +=11;
+	}
+
+	return summ;
+}
+
+var dealer = [getCart()];
+var player = [];
+
+do {
+	if (getSum(dealer) < 18)
+		dealer.push(getCart());
+	player.push(getCart());
+	alert('Твои карты: ' + player.join(' ') + ' ('+ getSum(player) + ')');
+} while (getSum(player) <= 21 && prompt('Еще карту? (да, нет)') == 'да');
+
+var d = getSum(dealer);
+var p = getSum(player);
+
+if (d <= 21 && p <= 21)
+	if (d < p)
+		alert('Win player: '+p+' dealer:'+d);
+	else if (d == p)
+		alert('Draw! ' + d);
+	else alert('Win dealer: '+d+' player:'+p);
+
+if (d > 21 && p > 21) 
+	alert('Draw! ' + d);
+else if (d > p)
+	alert('Win player: '+p+' dealer:'+d)
+else if (d > 21 || p > 21)
+	alert('Win dealer: '+d+' player:'+p);
+ 
+</script>
+
+
+
+
+
+
+
+
+
+
+

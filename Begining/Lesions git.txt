@@ -1,0 +1,2411 @@
+Last login: Tue Sep  8 17:31:38 on console
+denis@MacBook-Pro-Denis ~ % git --version
+git version 2.24.3 (Apple Git-128)
+denis@MacBook-Pro-Denis ~ % git help
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+denis@MacBook-Pro-Denis ~ % git --help
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+denis@MacBook-Pro-Denis ~ % git --help
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+denis@MacBook-Pro-Denis ~ % git help git
+denis@MacBook-Pro-Denis ~ % git config --list --show-origin
+file:/Library/Developer/CommandLineTools/usr/share/git-core/gitconfig   credential.helper=osxkeychain
+denis@MacBook-Pro-Denis ~ % git config --global user.name "Gelrush"
+denis@MacBook-Pro-Denis ~ % git config --global user.email "gelrush@icloud.com"
+denis@MacBook-Pro-Denis ~ % git config --global color.ui auto            
+denis@MacBook-Pro-Denis ~ % git config --list                
+credential.helper=osxkeychain
+user.name=Gelrush
+user.email=gelrush@icloud.com
+color.ui=auto
+denis@MacBook-Pro-Denis ~ % ls
+Applications			Movies
+Desktop				Music
+Documents			PacketTracer7
+Downloads			Pictures
+IdeaProjects			Public
+Library				Virtual Machines.localized
+denis@MacBook-Pro-Denis ~ % cd Downloads
+denis@MacBook-Pro-Denis Downloads % cd ~
+denis@MacBook-Pro-Denis ~ % cd Downloads
+denis@MacBook-Pro-Denis Downloads % cd ..   
+denis@MacBook-Pro-Denis ~ % mkdir TestDir
+denis@MacBook-Pro-Denis ~ % ls
+Applications			Music
+Desktop				PacketTracer7
+Documents			Pictures
+Downloads			Public
+IdeaProjects			TestDir
+Library				Virtual Machines.localized
+Movies
+denis@MacBook-Pro-Denis ~ % cd TestDir 
+denis@MacBook-Pro-Denis TestDir % touch test.txt
+denis@MacBook-Pro-Denis TestDir % ls
+test.txt
+denis@MacBook-Pro-Denis TestDir % cp test.txt test_copy.tst
+denis@MacBook-Pro-Denis TestDir % ls
+test.txt	test_copy.tst
+denis@MacBook-Pro-Denis TestDir % mv test.txt test_original.txt
+denis@MacBook-Pro-Denis TestDir % mv test_copy.tst test_copy.txt
+denis@MacBook-Pro-Denis TestDir % ls
+test_copy.txt		test_original.txt
+denis@MacBook-Pro-Denis TestDir % echo "Hello"
+Hello
+denis@MacBook-Pro-Denis TestDir % echo "Hello" > test_original.txt 
+denis@MacBook-Pro-Denis TestDir % cat test_original.txt 
+Hello
+denis@MacBook-Pro-Denis TestDir % rm test_original.txt 
+denis@MacBook-Pro-Denis TestDir % ls
+test_copy.txt
+denis@MacBook-Pro-Denis TestDir % cd ..
+denis@MacBook-Pro-Denis ~ % ls
+Applications			Music
+Desktop				PacketTracer7
+Documents			Pictures
+Downloads			Public
+IdeaProjects			TestDir
+Library				Virtual Machines.localized
+Movies
+denis@MacBook-Pro-Denis ~ % rm PacketTracer7 
+rm: PacketTracer7: is a directory
+denis@MacBook-Pro-Denis ~ % rm ?
+zsh: no matches found: ?
+denis@MacBook-Pro-Denis ~ % rm -R PacketTracer7
+denis@MacBook-Pro-Denis ~ % rm -R TestDir      
+denis@MacBook-Pro-Denis ~ % ls
+Applications			Movies
+Desktop				Music
+Documents			Pictures
+Downloads			Public
+IdeaProjects			Virtual Machines.localized
+Library
+denis@MacBook-Pro-Denis ~ % ls
+Applications			Movies
+Desktop				Music
+Documents			Pictures
+Downloads			Public
+IdeaProjects			Virtual Machines.localized
+Library
+denis@MacBook-Pro-Denis ~ % mkdir C++
+denis@MacBook-Pro-Denis ~ % ls
+Applications			Library
+C++				Movies
+Desktop				Music
+Documents			Pictures
+Downloads			Public
+IdeaProjects			Virtual Machines.localized
+denis@MacBook-Pro-Denis ~ % cd C==
+cd: no such file or directory: C==
+denis@MacBook-Pro-Denis ~ % cd C++
+denis@MacBook-Pro-Denis C++ % touch changes.txt
+denis@MacBook-Pro-Denis C++ % ls
+changes.txt
+denis@MacBook-Pro-Denis C++ % touch readme.md
+denis@MacBook-Pro-Denis C++ % echo "Hello" > readme.md 
+denis@MacBook-Pro-Denis C++ % cat readme.md 
+Hello
+denis@MacBook-Pro-Denis C++ % cd ..
+denis@MacBook-Pro-Denis ~ % rm -R C++ 
+denis@MacBook-Pro-Denis ~ % gi --vervion
+zsh: command not found: gi
+denis@MacBook-Pro-Denis ~ % git --vervion
+unknown option: --vervion
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+denis@MacBook-Pro-Denis ~ % git --version
+git version 2.24.3 (Apple Git-128)
+denis@MacBook-Pro-Denis ~ % git --update    
+unknown option: --update
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+denis@MacBook-Pro-Denis ~ % cd Desktop 
+denis@MacBook-Pro-Denis Desktop % mkdir repo
+denis@MacBook-Pro-Denis Desktop % cd repo 
+denis@MacBook-Pro-Denis repo % ls
+denis@MacBook-Pro-Denis repo % git init
+Initialized empty Git repository in /Users/denis/Desktop/repo/.git/
+denis@MacBook-Pro-Denis repo % ls
+denis@MacBook-Pro-Denis repo % ls -a
+.	..	.git
+denis@MacBook-Pro-Denis repo % git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+denis@MacBook-Pro-Denis repo % cd ..
+denis@MacBook-Pro-Denis Desktop % ls
+repo		repo-gui
+denis@MacBook-Pro-Denis Desktop % cd repo-gui 
+denis@MacBook-Pro-Denis repo-gui % ls
+README.md
+denis@MacBook-Pro-Denis repo-gui % cat README.md 
+repo-gui
+denis@MacBook-Pro-Denis repo-gui % cd ..
+denis@MacBook-Pro-Denis Desktop % ls
+repo		repo-gui
+denis@MacBook-Pro-Denis Desktop % cd repo
+denis@MacBook-Pro-Denis repo % ls
+denis@MacBook-Pro-Denis repo % git remote add origin https://github.com/Gelrush/repo-github.git
+denis@MacBook-Pro-Denis repo % git remote -v
+origin	https://github.com/Gelrush/repo-github.git (fetch)
+origin	https://github.com/Gelrush/repo-github.git (push)
+denis@MacBook-Pro-Denis repo % git remote -v
+origin	https://github.com/Gelrush/repo-github.git (fetch)
+origin	https://github.com/Gelrush/repo-github.git (push)
+denis@MacBook-Pro-Denis repo % ls
+denis@MacBook-Pro-Denis repo % touch readme.md
+denis@MacBook-Pro-Denis repo % git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	readme.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+denis@MacBook-Pro-Denis repo % git add readme.md 
+denis@MacBook-Pro-Denis repo % git status       
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   readme.md
+
+denis@MacBook-Pro-Denis repo % git commit
+[master (root-commit) 9b08675] add readme.md
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 readme.md
+denis@MacBook-Pro-Denis repo % ls
+readme.md
+denis@MacBook-Pro-Denis repo % git status
+On branch master
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis repo % echo "edited" > readme.md 
+denis@MacBook-Pro-Denis repo % git status               
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   readme.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+denis@MacBook-Pro-Denis repo % git commit -a -m 'update readme.md'
+[master 5623e0a] update readme.md
+ 1 file changed, 1 insertion(+)
+denis@MacBook-Pro-Denis repo % git status                         
+On branch master
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis repo % ls
+readme.md
+denis@MacBook-Pro-Denis repo % mkdir images
+denis@MacBook-Pro-Denis repo % ls
+images		readme.md
+denis@MacBook-Pro-Denis repo % git status  
+On branch master
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis repo % touch images/.gitkeep
+denis@MacBook-Pro-Denis repo % ls
+images		readme.md
+denis@MacBook-Pro-Denis repo % ls images 
+denis@MacBook-Pro-Denis repo % ls -a images 
+.		..		.gitkeep
+denis@MacBook-Pro-Denis repo % git status           
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	images/
+
+nothing added to commit but untracked files present (use "git add" to track)
+denis@MacBook-Pro-Denis repo % git add images 
+denis@MacBook-Pro-Denis repo % git commit -m 'create images directory'
+[master 61202a6] create images directory
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 images/.gitkeep
+denis@MacBook-Pro-Denis repo % touch .gitignore
+denis@MacBook-Pro-Denis repo % git status                             
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+denis@MacBook-Pro-Denis repo % echo "config" > .gitignore
+denis@MacBook-Pro-Denis repo % cat .gitignore
+config
+denis@MacBook-Pro-Denis repo % git status                
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+denis@MacBook-Pro-Denis repo % git add .gitignore
+denis@MacBook-Pro-Denis repo % git status        
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   .gitignore
+
+denis@MacBook-Pro-Denis repo % git commit -am 'ignore st up'
+[master 7e326b7] ignore st up
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+denis@MacBook-Pro-Denis repo % touch config
+denis@MacBook-Pro-Denis repo % git status                   
+On branch master
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis repo % echo "test" > config
+denis@MacBook-Pro-Denis repo % git status          
+On branch master
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis repo % cd ..
+denis@MacBook-Pro-Denis Desktop % ls
+repo		repo-gui
+denis@MacBook-Pro-Denis Desktop % cd repo-gui 
+denis@MacBook-Pro-Denis repo-gui % ls
+README.md	change.md
+denis@MacBook-Pro-Denis repo-gui % git status
+On branch main
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis repo-gui % cd ..
+denis@MacBook-Pro-Denis Desktop % cd repo
+denis@MacBook-Pro-Denis repo % ls
+config		images		readme.md
+denis@MacBook-Pro-Denis repo % echo "homework" >readme.md
+denis@MacBook-Pro-Denis repo % cat readme.md 
+homework
+denis@MacBook-Pro-Denis repo % touch nogit.txt
+denis@MacBook-Pro-Denis repo % git add readme.md 
+denis@MacBook-Pro-Denis repo % git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   readme.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	nogit.txt
+
+denis@MacBook-Pro-Denis repo % ls -a
+.		.git		config		nogit.txt
+..		.gitignore	images		readme.md
+denis@MacBook-Pro-Denis repo % echo "nogit" >> .gitignore
+denis@MacBook-Pro-Denis repo % cat gitignore
+cat: gitignore: No such file or directory
+denis@MacBook-Pro-Denis repo % cat .gitignore
+config
+nogit
+denis@MacBook-Pro-Denis repo % git status                
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   readme.md
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	nogit.txt
+
+denis@MacBook-Pro-Denis repo % echo "nogit.txt" >> .gitignore
+denis@MacBook-Pro-Denis repo % git status                    
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   readme.md
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .gitignore
+
+denis@MacBook-Pro-Denis repo % nano .gitignore
+denis@MacBook-Pro-Denis repo % cat .gitignore               
+config
+nogit.txt
+denis@MacBook-Pro-Denis repo % git status     
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   readme.md
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .gitignore
+
+denis@MacBook-Pro-Denis repo % git commit -am 'initial commit'
+[master 2f805eb] initial commit
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+denis@MacBook-Pro-Denis repo % git status                     
+On branch master
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis repo % ls
+config		images		nogit.txt	readme.md
+denis@MacBook-Pro-Denis repo % ld
+ld: warning: platform not specified
+ld: warning: -arch not specified
+ld: warning: No platform min-version specified on command line
+ld: no object files specified
+denis@MacBook-Pro-Denis repo % ls
+config		images		nogit.txt	readme.md
+denis@MacBook-Pro-Denis repo % git status
+On branch master
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis repo % 
+denis@MacBook-Pro-Denis repo % 
+denis@MacBook-Pro-Denis repo % git log
+commit 2f805ebd0a9f13af5b52f8ee27ef76091d19ec85 (HEAD -> master)
+Author: Gelrush <gelrush@icloud.com>
+Date:   Fri Sep 11 22:23:12 2020 +0300
+
+    initial commit
+
+commit 7e326b77b4df3a9c424f3898cd4a2bca293d8dba
+Author: Gelrush <gelrush@icloud.com>
+Date:   Fri Sep 11 22:06:52 2020 +0300
+
+    ignore st up
+
+commit 61202a6fae3f70fc554e4e4f6a10bf9090ad8e2f
+Author: Gelrush <gelrush@icloud.com>
+Date:   Fri Sep 11 21:59:49 2020 +0300
+
+    create images directory
+
+commit 5623e0a68659971dab19b9ce84a6dda3e366d5bc
+Author: Gelrush <gelrush@icloud.com>
+Date:   Fri Sep 11 21:52:22 2020 +0300
+
+    update readme.md
+
+commit 9b086750b069ccb948e666fd6c99fffe769ba129
+Author: Gelrush <gelrush@icloud.com>
+Date:   Fri Sep 11 21:48:49 2020 +0300
+
+    add readme.md
+ ESCOC
+
+a293d8dba
+
+
+
+
+
+090ad8e2f
+
+
+
+
+
+3e366d5bc
+
+
+
+
+
+e769ba129
+
+
+
+
+ ESCOC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ESCOC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ESCOC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ESCOC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ESCOD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ESCOD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ESCOD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ESCOD
+
+a293d8dba
+
+
+
+
+
+090ad8e2f
+
+
+
+
+
+3e366d5bc
+
+
+
+
+
+e769ba129
+
+
+
+
+ ESCOD
+
+commit 7e326b77b4df3a9c424f3898cd4a2bca293d8dba
+Author: Gelrush <gelrush@icloud.com>
+Date:   Fri Sep 11 22:06:52 2020 +0300
+
+    ignore st up
+
+commit 61202a6fae3f70fc554e4e4f6a10bf9090ad8e2f
+Author: Gelrush <gelrush@icloud.com>
+Date:   Fri Sep 11 21:59:49 2020 +0300
+
+    create images directory
+
+commit 5623e0a68659971dab19b9ce84a6dda3e366d5bc
+Author: Gelrush <gelrush@icloud.com>
+Date:   Fri Sep 11 21:52:22 2020 +0300
+
+    update readme.md
+
+commit 9b086750b069ccb948e666fd6c99fffe769ba129
+Author: Gelrush <gelrush@icloud.com>
+Date:   Fri Sep 11 21:48:49 2020 +0300
+
+    add readme.md
+denis@MacBook-Pro-Denis repo % 
+denis@MacBook-Pro-Denis repo % 
+denis@MacBook-Pro-Denis repo % ~
+zsh: permission denied: /Users/denis
+denis@MacBook-Pro-Denis repo % ~
+zsh: permission denied: /Users/denis
+denis@MacBook-Pro-Denis repo % cd ..
+denis@MacBook-Pro-Denis Desktop % cd..
+zsh: command not found: cd..
+denis@MacBook-Pro-Denis Desktop % cd ..
+denis@MacBook-Pro-Denis ~ % cd ..
+denis@MacBook-Pro-Denis /Users % ~
+zsh: permission denied: /Users/denis
+denis@MacBook-Pro-Denis /Users % cd ..
+denis@MacBook-Pro-Denis / % cd ..
+denis@MacBook-Pro-Denis / % sudo ~
+Password:
+sudo: /Users/denis: command not found
+denis@MacBook-Pro-Denis / % ~
+zsh: permission denied: /Users/denis
+denis@MacBook-Pro-Denis / % ls
+Applications	Volumes		etc		sbin
+Library		bin		home		tmp
+System		cores		opt		usr
+Users		dev		private		var
+denis@MacBook-Pro-Denis / % cd Users/denis  
+denis@MacBook-Pro-Denis ~ % ls
+Applications			Movies
+Desktop				Music
+Documents			Pictures
+Downloads			Public
+IdeaProjects			Virtual Machines.localized
+Library
+denis@MacBook-Pro-Denis ~ % cd Desktop 
+denis@MacBook-Pro-Denis Desktop % cd repo
+denis@MacBook-Pro-Denis repo % ls
+config		images		nogit.txt	readme.md
+denis@MacBook-Pro-Denis repo % git log --oneline
+2f805eb (HEAD -> master) initial commit
+7e326b7 ignore st up
+61202a6 create images directory
+5623e0a update readme.md
+9b08675 add readme.md
+denis@MacBook-Pro-Denis repo % touch examle
+denis@MacBook-Pro-Denis repo % git commit -am 'test commit'
+On branch master
+Untracked files:
+	examle
+
+nothing added to commit but untracked files present
+denis@MacBook-Pro-Denis repo % git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	examle
+
+nothing added to commit but untracked files present (use "git add" to track)
+denis@MacBook-Pro-Denis repo % git commit -a -m 'test commit'
+On branch master
+Untracked files:
+	examle
+
+nothing added to commit but untracked files present
+denis@MacBook-Pro-Denis repo % git add examle 
+denis@MacBook-Pro-Denis repo % git status                    
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   examle
+
+denis@MacBook-Pro-Denis repo % git commit -m 'test commit' 
+[master cb3bfc6] test commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 examle
+denis@MacBook-Pro-Denis repo % git log -oneline
+fatal: unrecognized argument: -oneline
+denis@MacBook-Pro-Denis repo % git log --oneline
+cb3bfc6 (HEAD -> master) test commit
+2f805eb initial commit
+7e326b7 ignore st up
+61202a6 create images directory
+5623e0a update readme.md
+9b08675 add readme.md
+denis@MacBook-Pro-Denis repo % git reset 2f805eb
+denis@MacBook-Pro-Denis repo % git log --oneline
+2f805eb (HEAD -> master) initial commit
+7e326b7 ignore st up
+61202a6 create images directory
+5623e0a update readme.md
+9b08675 add readme.md
+denis@MacBook-Pro-Denis repo % git reflog
+2f805eb (HEAD -> master) HEAD@{0}: reset: moving to 2f805eb
+cb3bfc6 HEAD@{1}: commit: test commit
+2f805eb (HEAD -> master) HEAD@{2}: commit: initial commit
+7e326b7 HEAD@{3}: commit: ignore st up
+61202a6 HEAD@{4}: commit: create images directory
+5623e0a HEAD@{5}: commit: update readme.md
+9b08675 HEAD@{6}: commit (initial): add readme.md
+denis@MacBook-Pro-Denis repo % git reset cb3bfc6
+denis@MacBook-Pro-Denis repo % git log --oneline
+cb3bfc6 (HEAD -> master) test commit
+2f805eb initial commit
+7e326b7 ignore st up
+61202a6 create images directory
+5623e0a update readme.md
+9b08675 add readme.md
+denis@MacBook-Pro-Denis repo % git reflog       
+cb3bfc6 (HEAD -> master) HEAD@{0}: reset: moving to cb3bfc6
+2f805eb HEAD@{1}: reset: moving to 2f805eb
+cb3bfc6 (HEAD -> master) HEAD@{2}: commit: test commit
+2f805eb HEAD@{3}: commit: initial commit
+7e326b7 HEAD@{4}: commit: ignore st up
+61202a6 HEAD@{5}: commit: create images directory
+5623e0a HEAD@{6}: commit: update readme.md
+9b08675 HEAD@{7}: commit (initial): add readme.md
+denis@MacBook-Pro-Denis repo % git revert 61202a6
+Removing images/.gitkeep
+hint: Waiting for your editor to close the file... error: There was a problem with the editor 'vi'.
+Please supply the message using either -m or -F option.
+denis@MacBook-Pro-Denis repo % git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    images/.gitkeep
+
+denis@MacBook-Pro-Denis repo % git log -oneline
+fatal: unrecognized argument: -oneline
+denis@MacBook-Pro-Denis repo % git log --oneline
+cb3bfc6 (HEAD -> master) test commit
+2f805eb initial commit
+7e326b7 ignore st up
+61202a6 create images directory
+5623e0a update readme.md
+9b08675 add readme.md
+denis@MacBook-Pro-Denis repo % ld
+ld: warning: platform not specified
+ld: warning: -arch not specified
+ld: warning: No platform min-version specified on command line
+ld: no object files specified
+denis@MacBook-Pro-Denis repo % ls
+config		examle		nogit.txt	readme.md
+denis@MacBook-Pro-Denis repo % 
+denis@MacBook-Pro-Denis repo % 
+denis@MacBook-Pro-Denis repo % git reflog
+cb3bfc6 (HEAD -> master) HEAD@{0}: reset: moving to cb3bfc6
+2f805eb HEAD@{1}: reset: moving to 2f805eb
+cb3bfc6 (HEAD -> master) HEAD@{2}: commit: test commit
+2f805eb HEAD@{3}: commit: initial commit
+7e326b7 HEAD@{4}: commit: ignore st up
+61202a6 HEAD@{5}: commit: create images directory
+5623e0a HEAD@{6}: commit: update readme.md
+9b08675 HEAD@{7}: commit (initial): add readme.md
+denis@MacBook-Pro-Denis repo % ls
+config		examle		nogit.txt	readme.md
+denis@MacBook-Pro-Denis repo %                               
+denis@MacBook-Pro-Denis repo % 
+denis@MacBook-Pro-Denis repo % echo "write changes to readme" >> readme.md 
+denis@MacBook-Pro-Denis repo % git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    images/.gitkeep
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   readme.md
+
+denis@MacBook-Pro-Denis repo % git add readme.md 
+denis@MacBook-Pro-Denis repo % git status       
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    images/.gitkeep
+	modified:   readme.md
+
+denis@MacBook-Pro-Denis repo % git commit -m 'for reset'
+[master b2fbf7d] for reset
+ 2 files changed, 1 insertion(+)
+ delete mode 100644 images/.gitkeep
+denis@MacBook-Pro-Denis repo % git status               
+On branch master
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis repo % git log -oneline
+fatal: unrecognized argument: -oneline
+denis@MacBook-Pro-Denis repo % git log --oneline
+b2fbf7d (HEAD -> master) for reset
+cb3bfc6 test commit
+2f805eb initial commit
+7e326b7 ignore st up
+61202a6 create images directory
+5623e0a update readme.md
+9b08675 add readme.md
+denis@MacBook-Pro-Denis repo % cat readme.md 
+homework
+write changes to readme
+denis@MacBook-Pro-Denis repo % get reset cb3bfc6
+zsh: command not found: get
+denis@MacBook-Pro-Denis repo % git reset cb3bfc6
+Unstaged changes after reset:
+D	images/.gitkeep
+M	readme.md
+denis@MacBook-Pro-Denis repo % git log --oneline
+cb3bfc6 (HEAD -> master) test commit
+2f805eb initial commit
+7e326b7 ignore st up
+61202a6 create images directory
+5623e0a update readme.md
+9b08675 add readme.md
+denis@MacBook-Pro-Denis repo % cat readme.md 
+homework
+write changes to readme
+denis@MacBook-Pro-Denis repo % git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    images/.gitkeep
+	modified:   readme.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+denis@MacBook-Pro-Denis repo % git reflog 
+cb3bfc6 (HEAD -> master) HEAD@{0}: reset: moving to cb3bfc6
+b2fbf7d HEAD@{1}: commit: for reset
+cb3bfc6 (HEAD -> master) HEAD@{2}: reset: moving to cb3bfc6
+2f805eb HEAD@{3}: reset: moving to 2f805eb
+cb3bfc6 (HEAD -> master) HEAD@{4}: commit: test commit
+2f805eb HEAD@{5}: commit: initial commit
+7e326b7 HEAD@{6}: commit: ignore st up
+61202a6 HEAD@{7}: commit: create images directory
+5623e0a HEAD@{8}: commit: update readme.md
+9b08675 HEAD@{9}: commit (initial): add readme.md
+denis@MacBook-Pro-Denis repo % git revert b2fbf7d
+On branch master
+Changes not staged for commit:
+	deleted:    images/.gitkeep
+	modified:   readme.md
+
+no changes added to commit
+denis@MacBook-Pro-Denis repo % cat readme.md 
+homework
+write changes to readme
+denis@MacBook-Pro-Denis repo % git restore
+fatal: you must specify path(s) to restore
+denis@MacBook-Pro-Denis repo % git restore b2fbf7d
+error: pathspec 'b2fbf7d' did not match any file(s) known to git
+denis@MacBook-Pro-Denis repo % 
+denis@MacBook-Pro-Denis repo % 
+denis@MacBook-Pro-Denis repo % ls
+config		examle		nogit.txt	readme.md
+denis@MacBook-Pro-Denis repo % git status                                 
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    images/.gitkeep
+	modified:   readme.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+denis@MacBook-Pro-Denis repo % git commit -am 'homework'
+[master 35a6ab5] homework
+ 2 files changed, 1 insertion(+)
+ delete mode 100644 images/.gitkeep
+denis@MacBook-Pro-Denis repo % git status               
+On branch master
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis repo % ls -a
+.		.git		config		nogit.txt
+..		.gitignore	examle		readme.md
+denis@MacBook-Pro-Denis repo % git log -oneline
+fatal: unrecognized argument: -oneline
+denis@MacBook-Pro-Denis repo % git log --oneline
+35a6ab5 (HEAD -> master) homework
+cb3bfc6 test commit
+2f805eb initial commit
+7e326b7 ignore st up
+61202a6 create images directory
+5623e0a update readme.md
+9b08675 add readme.md
+denis@MacBook-Pro-Denis repo % cat readme.md 
+homework
+write changes to readme
+denis@MacBook-Pro-Denis repo % git restore cb3bfc6
+error: pathspec 'cb3bfc6' did not match any file(s) known to git
+denis@MacBook-Pro-Denis repo % git reset cb3bfc6
+Unstaged changes after reset:
+D	images/.gitkeep
+M	readme.md
+denis@MacBook-Pro-Denis repo % ls
+config		examle		nogit.txt	readme.md
+denis@MacBook-Pro-Denis repo % ls -a
+.		.git		config		nogit.txt
+..		.gitignore	examle		readme.md
+denis@MacBook-Pro-Denis repo % cat readme.md 
+homework
+write changes to readme
+denis@MacBook-Pro-Denis repo % git reset 7e326b7
+Unstaged changes after reset:
+M	.gitignore
+D	images/.gitkeep
+M	readme.md
+denis@MacBook-Pro-Denis repo % cat readme.md 
+homework
+write changes to readme
+denis@MacBook-Pro-Denis repo % git restore 35a6ab5
+error: pathspec '35a6ab5' did not match any file(s) known to git
+denis@MacBook-Pro-Denis repo % git log
+commit 7e326b77b4df3a9c424f3898cd4a2bca293d8dba (HEAD -> master)
+Author: Gelrush <gelrush@icloud.com>
+Date:   Fri Sep 11 22:06:52 2020 +0300
+
+    ignore st up
+
+commit 61202a6fae3f70fc554e4e4f6a10bf9090ad8e2f
+Author: Gelrush <gelrush@icloud.com>
+Date:   Fri Sep 11 21:59:49 2020 +0300
+
+    create images directory
+
+commit 5623e0a68659971dab19b9ce84a6dda3e366d5bc
+Author: Gelrush <gelrush@icloud.com>
+Date:   Fri Sep 11 21:52:22 2020 +0300
+
+    update readme.md
+
+commit 9b086750b069ccb948e666fd6c99fffe769ba129
+Author: Gelrush <gelrush@icloud.com>
+Date:   Fri Sep 11 21:48:49 2020 +0300
+
+    add readme.md
+denis@MacBook-Pro-Denis repo % git reflog
+7e326b7 (HEAD -> master) HEAD@{0}: reset: moving to 7e326b7
+cb3bfc6 HEAD@{1}: reset: moving to cb3bfc6
+35a6ab5 HEAD@{2}: commit: homework
+cb3bfc6 HEAD@{3}: reset: moving to cb3bfc6
+b2fbf7d HEAD@{4}: commit: for reset
+cb3bfc6 HEAD@{5}: reset: moving to cb3bfc6
+2f805eb HEAD@{6}: reset: moving to 2f805eb
+cb3bfc6 HEAD@{7}: commit: test commit
+2f805eb HEAD@{8}: commit: initial commit
+7e326b7 (HEAD -> master) HEAD@{9}: commit: ignore st up
+61202a6 HEAD@{10}: commit: create images directory
+5623e0a HEAD@{11}: commit: update readme.md
+9b08675 HEAD@{12}: commit (initial): add readme.md
+denis@MacBook-Pro-Denis repo % git revert 35a6ab5
+error: Your local changes to the following files would be overwritten by merge:
+	readme.md
+Please commit your changes or stash them before you merge.
+Aborting
+fatal: revert failed
+denis@MacBook-Pro-Denis repo % git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .gitignore
+	deleted:    images/.gitkeep
+	modified:   readme.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	examle
+
+no changes added to commit (use "git add" and/or "git commit -a")
+denis@MacBook-Pro-Denis repo % git restore 35a6ab5
+error: pathspec '35a6ab5' did not match any file(s) known to git
+denis@MacBook-Pro-Denis repo % 
+denis@MacBook-Pro-Denis repo % 
+denis@MacBook-Pro-Denis repo % git reflog
+7e326b7 (HEAD -> master) HEAD@{0}: reset: moving to 7e326b7
+cb3bfc6 HEAD@{1}: reset: moving to cb3bfc6
+35a6ab5 HEAD@{2}: commit: homework
+cb3bfc6 HEAD@{3}: reset: moving to cb3bfc6
+b2fbf7d HEAD@{4}: commit: for reset
+cb3bfc6 HEAD@{5}: reset: moving to cb3bfc6
+2f805eb HEAD@{6}: reset: moving to 2f805eb
+cb3bfc6 HEAD@{7}: commit: test commit
+2f805eb HEAD@{8}: commit: initial commit
+7e326b7 (HEAD -> master) HEAD@{9}: commit: ignore st up
+61202a6 HEAD@{10}: commit: create images directory
+5623e0a HEAD@{11}: commit: update readme.md
+9b08675 HEAD@{12}: commit (initial): add readme.md
+denis@MacBook-Pro-Denis repo % git reset 2f805eb
+Unstaged changes after reset:
+D	images/.gitkeep
+M	readme.md
+denis@MacBook-Pro-Denis repo % ls
+config		examle		nogit.txt	readme.md
+denis@MacBook-Pro-Denis repo % cat readme.md 
+homework
+write changes to readme
+denis@MacBook-Pro-Denis repo % git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    images/.gitkeep
+	modified:   readme.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	examle
+
+no changes added to commit (use "git add" and/or "git commit -a")
+denis@MacBook-Pro-Denis repo % ls
+config		examle		nogit.txt	readme.md
+denis@MacBook-Pro-Denis repo % git log --oneline  
+2f805eb (HEAD -> master) initial commit
+7e326b7 ignore st up
+61202a6 create images directory
+5623e0a update readme.md
+9b08675 add readme.md
+denis@MacBook-Pro-Denis repo % ls 
+config		examle		nogit.txt	readme.md
+denis@MacBook-Pro-Denis repo % rm examle 
+denis@MacBook-Pro-Denis repo % nano readme.md 
+denis@MacBook-Pro-Denis repo % cat readme.md    
+homework
+denis@MacBook-Pro-Denis repo % git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    images/.gitkeep
+
+no changes added to commit (use "git add" and/or "git commit -a")
+denis@MacBook-Pro-Denis repo % git log --oneline
+2f805eb (HEAD -> master) initial commit
+7e326b7 ignore st up
+61202a6 create images directory
+5623e0a update readme.md
+9b08675 add readme.md
+denis@MacBook-Pro-Denis repo % git commit -am 'restore'
+[master 563ff8b] restore
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 images/.gitkeep
+denis@MacBook-Pro-Denis repo % git status
+On branch master
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis repo % git log --oneline       
+563ff8b (HEAD -> master) restore
+2f805eb initial commit
+7e326b7 ignore st up
+61202a6 create images directory
+5623e0a update readme.md
+9b08675 add readme.md
+denis@MacBook-Pro-Denis repo % ls
+config		nogit.txt	readme.md
+denis@MacBook-Pro-Denis repo % git restore 61202a6
+error: pathspec '61202a6' did not match any file(s) known to git
+denis@MacBook-Pro-Denis repo % ls
+config		nogit.txt	readme.md
+denis@MacBook-Pro-Denis repo % ls
+config		nogit.txt	readme.md
+denis@MacBook-Pro-Denis repo % echo "write change to file" >> readme.md 
+denis@MacBook-Pro-Denis repo % git commit -am 'and two try'
+[master c46d690] and two try
+ 1 file changed, 1 insertion(+)
+denis@MacBook-Pro-Denis repo % git status                              
+On branch master
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis repo % git log --oneline
+c46d690 (HEAD -> master) and two try
+563ff8b restore
+2f805eb initial commit
+7e326b7 ignore st up
+61202a6 create images directory
+5623e0a update readme.md
+9b08675 add readme.md
+denis@MacBook-Pro-Denis repo % git reset 563ff8b
+Unstaged changes after reset:
+M	readme.md
+denis@MacBook-Pro-Denis repo % cat readme.md 
+homework
+write change to file
+denis@MacBook-Pro-Denis repo % git restore readme.md 
+denis@MacBook-Pro-Denis repo % cat readme.md        
+homework
+denis@MacBook-Pro-Denis repo % ls
+config		nogit.txt	readme.md
+denis@MacBook-Pro-Denis repo % git status
+On branch master
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis repo % git branch
+* master
+denis@MacBook-Pro-Denis repo % git branch dev
+denis@MacBook-Pro-Denis repo % git branch    
+  dev
+* master
+denis@MacBook-Pro-Denis repo % ls
+config		nogit.txt	readme.md
+denis@MacBook-Pro-Denis repo % touch dev-branch.md
+denis@MacBook-Pro-Denis repo % git status         
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	dev-branch.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+denis@MacBook-Pro-Denis repo % git add dev-branch.md 
+denis@MacBook-Pro-Denis repo % git commit -m 'add dev-branch'
+[master 724e162] add dev-branch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 dev-branch.md
+denis@MacBook-Pro-Denis repo % git status                    
+On branch master
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis repo % ls
+config		dev-branch.md	nogit.txt	readme.md
+denis@MacBook-Pro-Denis repo % git checkout master
+Already on 'master'
+denis@MacBook-Pro-Denis repo % git log --oneline
+724e162 (HEAD -> master) add dev-branch
+563ff8b (dev) restore
+2f805eb initial commit
+7e326b7 ignore st up
+61202a6 create images directory
+5623e0a update readme.md
+9b08675 add readme.md
+denis@MacBook-Pro-Denis repo % git status
+On branch master
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis repo % ls
+config		dev-branch.md	nogit.txt	readme.md
+denis@MacBook-Pro-Denis repo % git branch
+  dev
+* master
+denis@MacBook-Pro-Denis repo % git log
+commit 724e162f1bd1f00f6e3cbac5bacef799eee3cc96 (HEAD -> master)
+Author: Gelrush <gelrush@icloud.com>
+Date:   Sun Sep 13 19:32:23 2020 +0300
+
+    add dev-branch
+
+commit 563ff8ba1298faac1d88ff25d9f9906c35120fc5 (dev)
+Author: Gelrush <gelrush@icloud.com>
+Date:   Sat Sep 12 22:40:07 2020 +0300
+
+    restore
+
+commit 2f805ebd0a9f13af5b52f8ee27ef76091d19ec85
+Author: Gelrush <gelrush@icloud.com>
+Date:   Fri Sep 11 22:23:12 2020 +0300
+
+    initial commit
+
+commit 7e326b77b4df3a9c424f3898cd4a2bca293d8dba
+Author: Gelrush <gelrush@icloud.com>
+Date:   Fri Sep 11 22:06:52 2020 +0300
+
+    ignore st up
+
+commit 61202a6fae3f70fc554e4e4f6a10bf9090ad8e2f
+Author: Gelrush <gelrush@icloud.com>
+Date:   Fri Sep 11 21:59:49 2020 +0300
+denis@MacBook-Pro-Denis repo % git branch
+  dev
+* master
+denis@MacBook-Pro-Denis repo % git checkout dev
+Switched to branch 'dev'
+denis@MacBook-Pro-Denis repo % touch dev2-branch.md
+denis@MacBook-Pro-Denis repo % gir add dev2-branch.md 
+zsh: command not found: gir
+denis@MacBook-Pro-Denis repo % git add dev2-branch.md
+denis@MacBook-Pro-Denis repo % git commit -m 'add dev2'
+[dev c2bc79c] add dev2
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 dev2-branch.md
+denis@MacBook-Pro-Denis repo % ls
+config		dev2-branch.md	nogit.txt	readme.md
+denis@MacBook-Pro-Denis repo % git checkout master
+Switched to branch 'master'
+denis@MacBook-Pro-Denis repo % ls
+config		dev-branch.md	nogit.txt	readme.md
+denis@MacBook-Pro-Denis repo % rm dev-branch.md 
+denis@MacBook-Pro-Denis repo % touch master-branch.md
+denis@MacBook-Pro-Denis repo % git add master-branch.md 
+denis@MacBook-Pro-Denis repo % git commit -m 'add master-branch'
+[master e5dc04c] add master-branch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 master-branch.md
+denis@MacBook-Pro-Denis repo % ls
+config			nogit.txt
+master-branch.md	readme.md
+denis@MacBook-Pro-Denis repo % 
+denis@MacBook-Pro-Denis repo % git reflog               
+e5dc04c (HEAD -> master) HEAD@{0}: commit: add master-branch
+724e162 HEAD@{1}: checkout: moving from dev to master
+c2bc79c (dev) HEAD@{2}: commit: add dev2
+563ff8b HEAD@{3}: checkout: moving from master to dev
+724e162 HEAD@{4}: checkout: moving from master to master
+724e162 HEAD@{5}: commit: add dev-branch
+563ff8b HEAD@{6}: reset: moving to 563ff8b
+c46d690 HEAD@{7}: commit: and two try
+563ff8b HEAD@{8}: commit: restore
+2f805eb HEAD@{9}: reset: moving to 2f805eb
+7e326b7 HEAD@{10}: reset: moving to 7e326b7
+cb3bfc6 HEAD@{11}: reset: moving to cb3bfc6
+35a6ab5 HEAD@{12}: commit: homework
+cb3bfc6 HEAD@{13}: reset: moving to cb3bfc6
+b2fbf7d HEAD@{14}: commit: for reset
+cb3bfc6 HEAD@{15}: reset: moving to cb3bfc6
+2f805eb HEAD@{16}: reset: moving to 2f805eb
+cb3bfc6 HEAD@{17}: commit: test commit
+2f805eb HEAD@{18}: commit: initial commit
+7e326b7 HEAD@{19}: commit: ignore st up
+61202a6 HEAD@{20}: commit: create images directory
+5623e0a HEAD@{21}: commit: update readme.md
+9b08675 HEAD@{22}: commit (initial): add readme.md
+denis@MacBook-Pro-Denis repo % 
+denis@MacBook-Pro-Denis repo % 
+denis@MacBook-Pro-Denis repo % git branch
+  dev
+* master
+denis@MacBook-Pro-Denis repo % git checkout dev
+Switched to branch 'dev'
+denis@MacBook-Pro-Denis repo % git branch dev-master master
+denis@MacBook-Pro-Denis repo % git branch
+* dev
+  dev-master
+  master
+denis@MacBook-Pro-Denis repo % git checkout dev-master
+Switched to branch 'dev-master'
+denis@MacBook-Pro-Denis repo % git log -oneline
+fatal: unrecognized argument: -oneline
+denis@MacBook-Pro-Denis repo % git log --oneline
+e5dc04c (HEAD -> dev-master, master) add master-branch
+724e162 add dev-branch
+563ff8b restore
+2f805eb initial commit
+7e326b7 ignore st up
+61202a6 create images directory
+5623e0a update readme.md
+9b08675 add readme.md
+denis@MacBook-Pro-Denis repo % git checkout -b dev-test
+Switched to a new branch 'dev-test'
+denis@MacBook-Pro-Denis repo % git log --oneline       
+e5dc04c (HEAD -> dev-test, master, dev-master) add master-branch
+724e162 add dev-branch
+563ff8b restore
+2f805eb initial commit
+7e326b7 ignore st up
+61202a6 create images directory
+5623e0a update readme.md
+9b08675 add readme.md
+denis@MacBook-Pro-Denis repo % ls
+config			master-branch.md	readme.md
+dev-branch.md		nogit.txt
+denis@MacBook-Pro-Denis repo % git branch
+  dev
+  dev-master
+* dev-test
+  master
+denis@MacBook-Pro-Denis repo % dev branch branch-1 master
+zsh: command not found: dev
+denis@MacBook-Pro-Denis repo % git branch branch-1 master
+denis@MacBook-Pro-Denis repo % git branch branch-2 master
+denis@MacBook-Pro-Denis repo % git checkout branch-2
+Switched to branch 'branch-2'
+denis@MacBook-Pro-Denis repo % ld
+ld: warning: platform not specified
+ld: warning: -arch not specified
+ld: warning: No platform min-version specified on command line
+ld: no object files specified
+denis@MacBook-Pro-Denis repo % ls
+config			master-branch.md	readme.md
+dev-branch.md		nogit.txt
+denis@MacBook-Pro-Denis repo % git branch                
+  branch-1
+* branch-2
+  dev
+  dev-master
+  dev-test
+  master
+denis@MacBook-Pro-Denis repo % touch branch2.txt
+denis@MacBook-Pro-Denis repo % git commit -am 'add branch2'
+On branch branch-2
+Untracked files:
+	branch2.txt
+
+nothing added to commit but untracked files present
+denis@MacBook-Pro-Denis repo % git status
+On branch branch-2
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	branch2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+denis@MacBook-Pro-Denis repo % git add branch2.txt 
+denis@MacBook-Pro-Denis repo % git commit -m 'add branch2' 
+[branch-2 e769860] add branch2
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 branch2.txt
+denis@MacBook-Pro-Denis repo % git status                 
+On branch branch-2
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis repo % git branch branch-2-1 branch-2
+denis@MacBook-Pro-Denis repo % ls
+branch2.txt		dev-branch.md		nogit.txt
+config			master-branch.md	readme.md
+denis@MacBook-Pro-Denis repo % git checkout master
+Switched to branch 'master'
+denis@MacBook-Pro-Denis repo % ls
+config			master-branch.md	readme.md
+dev-branch.md		nogit.txt
+denis@MacBook-Pro-Denis repo % ssh keygen
+ssh: Could not resolve hostname keygen: nodename nor servname provided, or not known
+denis@MacBook-Pro-Denis repo % ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/denis/.ssh/id_rsa): 
+Created directory '/Users/denis/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/denis/.ssh/id_rsa.
+Your public key has been saved in /Users/denis/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:gc8mRWjJ4hkAKg0uqkFO/6stUKEjW2M4mJtmWReE+2M denis@MacBook-Pro-Denis.local
+The key's randomart image is:
++---[RSA 3072]----+
+|o...oo o.        |
+|oo oo.=o         |
+|=*o.o=o o        |
+|&o=+o. + .       |
+|+O=oo . S        |
+|=*  .E o         |
+|+ . ...          |
+|   .. .          |
+|   .oo           |
++----[SHA256]-----+
+denis@MacBook-Pro-Denis repo % cat /Users/denis/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDUzcJ7nyJwTJhuXaZ6PMHujPYybJ6EeSBjEujMfE82jFNXUf0tnkB246dBPCUcw7Q2I87AKn1yVIqu28jfPLgwfeBH7gcjJ04KbvG2dhsSIK5Nc/Izp0uRgA4aPnAGt/5UF7LA5vH1/KHfJwMgX7FO9yGN13u2jRUG/JSpveODM0nsewRdVXNMgAhQoxaRyJQvdK2PAqGrQhxr0qof63fp+e70jLlGV4XuPf7NM3Y7qm61S9xW9Z1Tl4gDaPaq/eDflr5J41HAPjOqRvUfdI/vmF1jcZXuKBBFwUeNaXJWTHtDSkBLyKpAZVIj2lY8ilm/HSuooDsyywhEnejjOWYOaAfg7AuJcGAT+sJwOSAfNUAsn3lmhEJRdUZBtSV6o9U4UWBqu7lWzSNAsugvx3jC28RT4gNmr5lOmz0YYyr1UhalK/n6/9ncIK5FPAtUCqdDpni7yPxANQrPzZ2Jy77ncG0xtx2U+UJCXi6yil1akYJxC3kUpInedq7wOpIC09U= denis@MacBook-Pro-Denis.local
+denis@MacBook-Pro-Denis repo % cd ..
+denis@MacBook-Pro-Denis Desktop % git clone git@github.com:Gelrush/project.git project
+Cloning into 'project'...
+The authenticity of host 'github.com (140.82.121.4)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com,140.82.121.4' (RSA) to the list of known hosts.
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+denis@MacBook-Pro-Denis Desktop % cd project 
+denis@MacBook-Pro-Denis project % ls
+README.md
+denis@MacBook-Pro-Denis project % cat README.md 
+# project%                                                                   denis@MacBook-Pro-Denis project % 
+denis@MacBook-Pro-Denis project % 
+denis@MacBook-Pro-Denis project % git branch dev
+denis@MacBook-Pro-Denis project % git checkout dev
+Switched to branch 'dev'
+denis@MacBook-Pro-Denis project % touch dev-README.md
+denis@MacBook-Pro-Denis project % git add dev-README.md 
+denis@MacBook-Pro-Denis project % git commit -m 'add dev branch'
+[dev d0fc5fd] add dev branch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 dev-README.md
+denis@MacBook-Pro-Denis project % ls
+README.md	dev-README.md
+denis@MacBook-Pro-Denis project % git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+denis@MacBook-Pro-Denis project % ls
+README.md
+denis@MacBook-Pro-Denis project % git push 
+Everything up-to-date
+denis@MacBook-Pro-Denis project % git checkout dev   
+Switched to branch 'dev'
+denis@MacBook-Pro-Denis project % git push
+fatal: The current branch dev has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin dev
+
+denis@MacBook-Pro-Denis project % git branch   
+* dev
+  master
+denis@MacBook-Pro-Denis project % git push -u origin dev
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 270 bytes | 270.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'dev' on GitHub by visiting:
+remote:      https://github.com/Gelrush/project/pull/new/dev
+remote: 
+To github.com:Gelrush/project.git
+ * [new branch]      dev -> dev
+Branch 'dev' set up to track remote branch 'dev' from 'origin'.
+denis@MacBook-Pro-Denis project % 
+denis@MacBook-Pro-Denis project % 
+denis@MacBook-Pro-Denis project % git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:Gelrush/project
+   d0fc5fd..faa771e  dev        -> origin/dev
+Updating d0fc5fd..faa771e
+Fast-forward
+ dev-README.md | 3 +++
+ 1 file changed, 3 insertions(+)
+denis@MacBook-Pro-Denis project % git log
+commit faa771e8e966b49bb8fd25e1d4893bfe6ffd91a8 (HEAD -> dev, origin/dev)
+Author: Gelrush <71148809+Gelrush@users.noreply.github.com>
+Date:   Sun Sep 13 20:37:53 2020 +0300
+
+    Update dev-README.md
+
+commit d0fc5fd615cd474f8428c7c501f10c3069345df7
+Author: Gelrush <gelrush@icloud.com>
+Date:   Sun Sep 13 20:33:21 2020 +0300
+
+    add dev branch
+
+commit 4d1eb18b52cb7aa68d44deba55c6b9fd73d86baa (origin/master, origin/HEAD, master)
+Author: Gelrush <71148809+Gelrush@users.noreply.github.com>
+Date:   Sun Sep 13 20:19:46 2020 +0300
+
+    Initial commit
+denis@MacBook-Pro-Denis project % ls
+README.md	dev-README.md
+denis@MacBook-Pro-Denis project % cat dev-README.md 
+project-dev
+
+some update
+denis@MacBook-Pro-Denis project % cd ..
+denis@MacBook-Pro-Denis Desktop % ls 
+project		project-gui	repo		repo-gui
+denis@MacBook-Pro-Denis Desktop % cd repo
+denis@MacBook-Pro-Denis repo % git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+denis@MacBook-Pro-Denis repo % ls
+config			master-branch.md	readme.md
+dev-branch.md		nogit.txt
+denis@MacBook-Pro-Denis repo % git branch
+  branch-1
+  branch-2
+  branch-2-1
+  dev
+  dev-master
+  dev-test
+* master
+denis@MacBook-Pro-Denis repo % git branch --set-upstream-to=origin/dev master
+error: the requested upstream branch 'origin/dev' does not exist
+hint: 
+hint: If you are planning on basing your work on an upstream
+hint: branch that already exists at the remote, you may need to
+hint: run "git fetch" to retrieve it.
+hint: 
+hint: If you are planning to push out a new local branch that
+hint: will track its remote counterpart, you may want to use
+hint: "git push -u" to set the upstream config as you push.
+denis@MacBook-Pro-Denis repo % git branch --set-upstream-to=origin/repo-github master
+error: the requested upstream branch 'origin/repo-github' does not exist
+hint: 
+hint: If you are planning on basing your work on an upstream
+hint: branch that already exists at the remote, you may need to
+hint: run "git fetch" to retrieve it.
+hint: 
+hint: If you are planning to push out a new local branch that
+hint: will track its remote counterpart, you may want to use
+hint: "git push -u" to set the upstream config as you push.
+denis@MacBook-Pro-Denis repo % git push   
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+denis@MacBook-Pro-Denis repo % git push --set-upstream origin master
+Username for 'https://github.com': Gelrush
+Password for 'https://Gelrush@github.com': 
+Enumerating objects: 22, done.
+Counting objects: 100% (22/22), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (22/22), 1.87 KiB | 1.87 MiB/s, done.
+Total 22 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/Gelrush/repo-github.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+denis@MacBook-Pro-Denis repo % ls
+config			master-branch.md	readme.md
+dev-branch.md		nogit.txt
+denis@MacBook-Pro-Denis repo % git remote -v
+origin	https://github.com/Gelrush/repo-github.git (fetch)
+origin	https://github.com/Gelrush/repo-github.git (push)
+denis@MacBook-Pro-Denis repo % cd ..
+denis@MacBook-Pro-Denis Desktop % cd project
+denis@MacBook-Pro-Denis project % git fetch
+From github.com:Gelrush/project
+ * [new branch]      dev-kraken -> origin/dev-kraken
+denis@MacBook-Pro-Denis project % git brabch
+git: 'brabch' is not a git command. See 'git --help'.
+
+The most similar command is
+	branch
+denis@MacBook-Pro-Denis project % git branch
+* dev
+  master
+denis@MacBook-Pro-Denis project % gin checkout dev-kraken
+zsh: command not found: gin
+denis@MacBook-Pro-Denis project % git checkout dev-kraken
+Branch 'dev-kraken' set up to track remote branch 'dev-kraken' from 'origin'.
+Switched to a new branch 'dev-kraken'
+denis@MacBook-Pro-Denis project % git branch
+  dev
+* dev-kraken
+  master
+denis@MacBook-Pro-Denis project % git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+denis@MacBook-Pro-Denis project % git merge dev
+Updating 4d1eb18..faa771e
+Fast-forward
+ dev-README.md | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 dev-README.md
+denis@MacBook-Pro-Denis project % git log
+commit faa771e8e966b49bb8fd25e1d4893bfe6ffd91a8 (HEAD -> master, origin/dev-kraken, origin/dev, dev-kraken, dev)
+Author: Gelrush <71148809+Gelrush@users.noreply.github.com>
+Date:   Sun Sep 13 20:37:53 2020 +0300
+
+    Update dev-README.md
+
+commit d0fc5fd615cd474f8428c7c501f10c3069345df7
+Author: Gelrush <gelrush@icloud.com>
+Date:   Sun Sep 13 20:33:21 2020 +0300
+
+    add dev branch
+
+commit 4d1eb18b52cb7aa68d44deba55c6b9fd73d86baa (origin/master, origin/HEAD)
+Author: Gelrush <71148809+Gelrush@users.noreply.github.com>
+Date:   Sun Sep 13 20:19:46 2020 +0300
+
+    Initial commit
+denis@MacBook-Pro-Denis project % ls
+README.md	dev-README.md
+denis@MacBook-Pro-Denis project % git merge dev-kraken
+Already up to date.
+denis@MacBook-Pro-Denis project % git push
+Total 0 (delta 0), reused 0 (delta 0)
+To github.com:Gelrush/project.git
+   4d1eb18..faa771e  master -> master
+denis@MacBook-Pro-Denis project % git branch -d dev dev-kraken
+Deleted branch dev (was faa771e).
+Deleted branch dev-kraken (was faa771e).
+denis@MacBook-Pro-Denis project % git push
+Everything up-to-date
+denis@MacBook-Pro-Denis project % git branch
+* master
+denis@MacBook-Pro-Denis project % git push  
+Everything up-to-date
+denis@MacBook-Pro-Denis project % git remove              
+git: 'remove' is not a git command. See 'git --help'.
+
+The most similar command is
+	remote
+denis@MacBook-Pro-Denis project % git remote
+origin
+denis@MacBook-Pro-Denis project % git remote -v
+origin	git@github.com:Gelrush/project.git (fetch)
+origin	git@github.com:Gelrush/project.git (push)
+denis@MacBook-Pro-Denis project % git push --delete origin dev dev-kraken
+To github.com:Gelrush/project.git
+ - [deleted]         dev
+ - [deleted]         dev-kraken
+denis@MacBook-Pro-Denis project % git branch feature
+denis@MacBook-Pro-Denis project % mkdir code
+denis@MacBook-Pro-Denis project % touch code/app.go
+denis@MacBook-Pro-Denis project % touch code/config.go
+denis@MacBook-Pro-Denis project % rm -r code
+denis@MacBook-Pro-Denis project % ls
+README.md	dev-README.md
+denis@MacBook-Pro-Denis project % git status  
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis project % git checkout feature
+Switched to branch 'feature'
+denis@MacBook-Pro-Denis project % mkdir code
+denis@MacBook-Pro-Denis project % touch code/app.go
+denis@MacBook-Pro-Denis project % touch code/config.go
+denis@MacBook-Pro-Denis project % git status          
+On branch feature
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	code/
+
+nothing added to commit but untracked files present (use "git add" to track)
+denis@MacBook-Pro-Denis project % git add .
+denis@MacBook-Pro-Denis project % git commit -m 'add dir code'
+[feature f6fc695] add dir code
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 code/app.go
+ create mode 100644 code/config.go
+denis@MacBook-Pro-Denis project % git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+denis@MacBook-Pro-Denis project % ls
+README.md	dev-README.md
+denis@MacBook-Pro-Denis project % git checkout -b first-feature
+Switched to a new branch 'first-feature'
+denis@MacBook-Pro-Denis project % git checkout                 
+denis@MacBook-Pro-Denis project % git status                   
+On branch first-feature
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis project % touch bla-bla.txt
+denis@MacBook-Pro-Denis project % git add bla-bla.txt
+denis@MacBook-Pro-Denis project % git commit -m 'add bla-bla code' 
+[first-feature a93f824] add bla-bla code
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 bla-bla.txt
+denis@MacBook-Pro-Denis project % git branch
+  feature
+* first-feature
+  master
+denis@MacBook-Pro-Denis project % ld          
+ld: warning: platform not specified
+ld: warning: -arch not specified
+ld: warning: No platform min-version specified on command line
+ld: no object files specified
+denis@MacBook-Pro-Denis project % ls
+README.md	bla-bla.txt	dev-README.md
+denis@MacBook-Pro-Denis project % git checkout feature
+Switched to branch 'feature'
+denis@MacBook-Pro-Denis project % ls
+README.md	code		dev-README.md
+denis@MacBook-Pro-Denis project % git push -u origin feature
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 354 bytes | 354.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'feature' on GitHub by visiting:
+remote:      https://github.com/Gelrush/project/pull/new/feature
+remote: 
+To github.com:Gelrush/project.git
+ * [new branch]      feature -> feature
+Branch 'feature' set up to track remote branch 'feature' from 'origin'.
+denis@MacBook-Pro-Denis project % git checkout first-feature
+Switched to branch 'first-feature'
+denis@MacBook-Pro-Denis project % ls
+README.md	bla-bla.txt	dev-README.md
+denis@MacBook-Pro-Denis project % git rebase master
+Current branch first-feature is up to date.
+denis@MacBook-Pro-Denis project % ls
+README.md	bla-bla.txt	dev-README.md
+denis@MacBook-Pro-Denis project % git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+denis@MacBook-Pro-Denis project % ls
+README.md	dev-README.md
+denis@MacBook-Pro-Denis project % git checkout feature
+Switched to branch 'feature'
+Your branch is up to date with 'origin/feature'.
+denis@MacBook-Pro-Denis project % ls
+README.md	code		dev-README.md
+denis@MacBook-Pro-Denis project % git checkout master 
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+denis@MacBook-Pro-Denis project % git merge feature  
+Updating faa771e..f6fc695
+Fast-forward
+ code/app.go    | 0
+ code/config.go | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 code/app.go
+ create mode 100644 code/config.go
+denis@MacBook-Pro-Denis project % ls
+README.md	code		dev-README.md
+denis@MacBook-Pro-Denis project % git push
+Total 0 (delta 0), reused 0 (delta 0)
+To github.com:Gelrush/project.git
+   faa771e..f6fc695  master -> master
+denis@MacBook-Pro-Denis project % git checkout first-feature
+Switched to branch 'first-feature'
+denis@MacBook-Pro-Denis project % git push -u origin first-feature
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 303 bytes | 303.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'first-feature' on GitHub by visiting:
+remote:      https://github.com/Gelrush/project/pull/new/first-feature
+remote: 
+To github.com:Gelrush/project.git
+ * [new branch]      first-feature -> first-feature
+Branch 'first-feature' set up to track remote branch 'first-feature' from 'origin'.
+denis@MacBook-Pro-Denis project % git status
+On branch first-feature
+Your branch is up to date with 'origin/first-feature'.
+
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis project % git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: add bla-bla code
+denis@MacBook-Pro-Denis project % ls
+README.md	bla-bla.txt	code		dev-README.md
+denis@MacBook-Pro-Denis project % git push
+To github.com:Gelrush/project.git
+ ! [rejected]        first-feature -> first-feature (non-fast-forward)
+error: failed to push some refs to 'git@github.com:Gelrush/project.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+denis@MacBook-Pro-Denis project % git push -forse
+fatal: the receiving end does not support push options
+denis@MacBook-Pro-Denis project % git push --forse
+error: unknown option `forse'
+usage: git push [<options>] [<repository> [<refspec>...]]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --repo <repository>   repository
+    --all                 push all refs
+    --mirror              mirror all refs
+    -d, --delete          delete refs
+    --tags                push tags (can't be used with --all or --mirror)
+    -n, --dry-run         dry run
+    --porcelain           machine-readable output
+    -f, --force           force updates
+    --force-with-lease[=<refname>:<expect>]
+                          require old value of ref to be at this value
+    --recurse-submodules[=(check|on-demand|no)]
+                          control recursive pushing of submodules
+    --thin                use thin pack
+    --receive-pack <receive-pack>
+                          receive pack program
+    --exec <receive-pack>
+                          receive pack program
+    -u, --set-upstream    set upstream for git pull/status
+    --progress            force progress reporting
+    --prune               prune locally removed refs
+    --no-verify           bypass pre-push hook
+    --follow-tags         push missing but relevant tags
+    --signed[=(yes|no|if-asked)]
+                          GPG sign the push
+    --atomic              request atomic transaction on remote side
+    -o, --push-option <server-specific>
+                          option to transmit
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+
+denis@MacBook-Pro-Denis project % git push --forse
+error: unknown option `forse'
+usage: git push [<options>] [<repository> [<refspec>...]]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --repo <repository>   repository
+    --all                 push all refs
+    --mirror              mirror all refs
+    -d, --delete          delete refs
+    --tags                push tags (can't be used with --all or --mirror)
+    -n, --dry-run         dry run
+    --porcelain           machine-readable output
+    -f, --force           force updates
+    --force-with-lease[=<refname>:<expect>]
+                          require old value of ref to be at this value
+    --recurse-submodules[=(check|on-demand|no)]
+                          control recursive pushing of submodules
+    --thin                use thin pack
+    --receive-pack <receive-pack>
+                          receive pack program
+    --exec <receive-pack>
+                          receive pack program
+    -u, --set-upstream    set upstream for git pull/status
+    --progress            force progress reporting
+    --prune               prune locally removed refs
+    --no-verify           bypass pre-push hook
+    --follow-tags         push missing but relevant tags
+    --signed[=(yes|no|if-asked)]
+                          GPG sign the push
+    --atomic              request atomic transaction on remote side
+    -o, --push-option <server-specific>
+                          option to transmit
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+
+denis@MacBook-Pro-Denis project % git push --force
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 330 bytes | 330.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0)
+To github.com:Gelrush/project.git
+ + a93f824...11f53c4 first-feature -> first-feature (forced update)
+denis@MacBook-Pro-Denis project % ls
+README.md	bla-bla.txt	code		dev-README.md
+denis@MacBook-Pro-Denis project % ls
+README.md	bla-bla.txt	code		dev-README.md
+denis@MacBook-Pro-Denis project % git brench
+git: 'brench' is not a git command. See 'git --help'.
+
+The most similar command is
+	branch
+denis@MacBook-Pro-Denis project % git branch
+  feature
+* first-feature
+  master
+denis@MacBook-Pro-Denis project % git log --oneline
+11f53c4 (HEAD -> first-feature, origin/first-feature) add bla-bla code
+f6fc695 (origin/master, origin/feature, origin/HEAD, master, feature) add dir code
+faa771e Update dev-README.md
+d0fc5fd add dev branch
+4d1eb18 Initial commit
+denis@MacBook-Pro-Denis project % git status
+On branch first-feature
+Your branch is up to date with 'origin/first-feature'.
+
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis project % git branch -d feature
+Deleted branch feature (was f6fc695).
+denis@MacBook-Pro-Denis project % git branch           
+* first-feature
+  master
+denis@MacBook-Pro-Denis project % git push
+Warning: Permanently added the RSA host key for IP address '140.82.121.3' to the list of known hosts.
+Everything up-to-date
+denis@MacBook-Pro-Denis project % git push -force
+error: did you mean `--force` (with two dashes ?)
+denis@MacBook-Pro-Denis project % git push --force
+Everything up-to-date
+denis@MacBook-Pro-Denis project % git push help   
+fatal: 'help' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+denis@MacBook-Pro-Denis project % git push -help
+usage: git push [<options>] [<repository> [<refspec>...]]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --repo <repository>   repository
+    --all                 push all refs
+    --mirror              mirror all refs
+    -d, --delete          delete refs
+    --tags                push tags (can't be used with --all or --mirror)
+    -n, --dry-run         dry run
+    --porcelain           machine-readable output
+    -f, --force           force updates
+    --force-with-lease[=<refname>:<expect>]
+                          require old value of ref to be at this value
+    --recurse-submodules[=(check|on-demand|no)]
+                          control recursive pushing of submodules
+    --thin                use thin pack
+    --receive-pack <receive-pack>
+                          receive pack program
+    --exec <receive-pack>
+                          receive pack program
+    -u, --set-upstream    set upstream for git pull/status
+    --progress            force progress reporting
+    --prune               prune locally removed refs
+    --no-verify           bypass pre-push hook
+    --follow-tags         push missing but relevant tags
+    --signed[=(yes|no|if-asked)]
+                          GPG sign the push
+    --atomic              request atomic transaction on remote side
+    -o, --push-option <server-specific>
+                          option to transmit
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+
+denis@MacBook-Pro-Denis project % clear
+
+denis@MacBook-Pro-Denis project % ls
+README.md	bla-bla.txt	code		dev-README.md
+denis@MacBook-Pro-Denis project % echo 'new content' > bla-bla.txt 
+denis@MacBook-Pro-Denis project % git stash
+Saved working directory and index state WIP on first-feature: 11f53c4 add bla-bla code
+denis@MacBook-Pro-Denis project % git stash list
+stash@{0}: WIP on first-feature: 11f53c4 add bla-bla code
+denis@MacBook-Pro-Denis project % git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+denis@MacBook-Pro-Denis project % ls                              
+README.md	code		dev-README.md
+denis@MacBook-Pro-Denis project % echo 'new content' > dev-README.md 
+denis@MacBook-Pro-Denis project % git stash
+Saved working directory and index state WIP on master: f6fc695 add dir code
+denis@MacBook-Pro-Denis project % git stash list
+stash@{0}: WIP on master: f6fc695 add dir code
+stash@{1}: WIP on first-feature: 11f53c4 add bla-bla code
+denis@MacBook-Pro-Denis project % touch new-feature.go
+denis@MacBook-Pro-Denis project % git stash push new-feature.go 
+error: pathspec ':(,prefix:0)new-feature.go' did not match any file(s) known to git
+Did you forget to 'git add'?
+denis@MacBook-Pro-Denis project % git add .
+denis@MacBook-Pro-Denis project % git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   new-feature.go
+
+denis@MacBook-Pro-Denis project % git stash push new-feature.go
+Saved working directory and index state WIP on master: f6fc695 add dir code
+denis@MacBook-Pro-Denis project % ls
+README.md	code		dev-README.md
+denis@MacBook-Pro-Denis project % git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis project % git stash list               
+stash@{0}: WIP on master: f6fc695 add dir code
+stash@{1}: WIP on master: f6fc695 add dir code
+stash@{2}: WIP on first-feature: 11f53c4 add bla-bla code
+denis@MacBook-Pro-Denis project % git stash pop stash@{2}      
+CONFLICT (modify/delete): bla-bla.txt deleted in Updated upstream and modified in Stashed changes. Version Stashed changes of bla-bla.txt left in tree.
+The stash entry is kept in case you need it again.
+denis@MacBook-Pro-Denis project % ls
+README.md	bla-bla.txt	code		dev-README.md
+denis@MacBook-Pro-Denis project % git stash list         
+stash@{0}: WIP on master: f6fc695 add dir code
+stash@{1}: WIP on master: f6fc695 add dir code
+stash@{2}: WIP on first-feature: 11f53c4 add bla-bla code
+denis@MacBook-Pro-Denis project % git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+	deleted by us:   bla-bla.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+denis@MacBook-Pro-Denis project % rm bla-bla.txt 
+denis@MacBook-Pro-Denis project % git status    
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+	deleted by us:   bla-bla.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+denis@MacBook-Pro-Denis project % ls        
+README.md	code		dev-README.md
+denis@MacBook-Pro-Denis project % gir branch 
+zsh: command not found: gir
+denis@MacBook-Pro-Denis project % git branch 
+  first-feature
+* master
+denis@MacBook-Pro-Denis project % git branch first-feature 
+fatal: A branch named 'first-feature' already exists.
+denis@MacBook-Pro-Denis project % git branch              
+  first-feature
+* master
+denis@MacBook-Pro-Denis project % git checkout first-feature
+bla-bla.txt: needs merge
+error: you need to resolve your current index first
+denis@MacBook-Pro-Denis project % git branch                
+  first-feature
+* master
+denis@MacBook-Pro-Denis project % git log
+commit f6fc695b48d4afd685fa67c43d5e1acc830d830e (HEAD -> master, origin/master, origin/feature, origin/HEAD)
+Author: Gelrush <gelrush@icloud.com>
+Date:   Sun Sep 13 21:28:46 2020 +0300
+
+    add dir code
+
+commit faa771e8e966b49bb8fd25e1d4893bfe6ffd91a8
+Author: Gelrush <71148809+Gelrush@users.noreply.github.com>
+Date:   Sun Sep 13 20:37:53 2020 +0300
+
+    Update dev-README.md
+
+commit d0fc5fd615cd474f8428c7c501f10c3069345df7
+Author: Gelrush <gelrush@icloud.com>
+Date:   Sun Sep 13 20:33:21 2020 +0300
+
+    add dev branch
+
+commit 4d1eb18b52cb7aa68d44deba55c6b9fd73d86baa
+Author: Gelrush <71148809+Gelrush@users.noreply.github.com>
+Date:   Sun Sep 13 20:19:46 2020 +0300
+
+    Initial commit
+denis@MacBook-Pro-Denis project % git status                
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+	deleted by us:   bla-bla.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+denis@MacBook-Pro-Denis project % touch bla-bla.txt
+denis@MacBook-Pro-Denis project % git status       
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+	deleted by us:   bla-bla.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+denis@MacBook-Pro-Denis project % git rm bla-bla.txt 
+rm 'bla-bla.txt'
+denis@MacBook-Pro-Denis project % ls
+README.md	code		dev-README.md
+denis@MacBook-Pro-Denis project % git status        
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis project % git checkout first-feature
+Switched to branch 'first-feature'
+Your branch is up to date with 'origin/first-feature'.
+denis@MacBook-Pro-Denis project % git stash list
+stash@{0}: WIP on master: f6fc695 add dir code
+stash@{1}: WIP on master: f6fc695 add dir code
+stash@{2}: WIP on first-feature: 11f53c4 add bla-bla code
+denis@MacBook-Pro-Denis project % git stash pop stash@{2}
+On branch first-feature
+Your branch is up to date with 'origin/first-feature'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   bla-bla.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped stash@{2} (f7a7cccc82cef659430ae554c3adc3ddad58cbd3)
+denis@MacBook-Pro-Denis project % git stash list         
+stash@{0}: WIP on master: f6fc695 add dir code
+stash@{1}: WIP on master: f6fc695 add dir code
+denis@MacBook-Pro-Denis project % git stash -help
+usage: git stash list [<options>]
+   or: git stash show [<options>] [<stash>]
+   or: git stash drop [-q|--quiet] [<stash>]
+   or: git stash ( pop | apply ) [--index] [-q|--quiet] [<stash>]
+   or: git stash branch <branchname> [<stash>]
+   or: git stash clear
+   or: git stash [push [-p|--patch] [-k|--[no-]keep-index] [-q|--quiet]
+          [-u|--include-untracked] [-a|--all] [-m|--message <message>]
+          [--] [<pathspec>...]]
+   or: git stash save [-p|--patch] [-k|--[no-]keep-index] [-q|--quiet]
+          [-u|--include-untracked] [-a|--all] [<message>]
+
+denis@MacBook-Pro-Denis project % git stash clear
+denis@MacBook-Pro-Denis project % git stash list 
+denis@MacBook-Pro-Denis project % git status
+On branch first-feature
+Your branch is up to date with 'origin/first-feature'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   bla-bla.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+denis@MacBook-Pro-Denis project % git log --oneline
+11f53c4 (HEAD -> first-feature, origin/first-feature) add bla-bla code
+f6fc695 (origin/master, origin/feature, origin/HEAD, master) add dir code
+faa771e Update dev-README.md
+d0fc5fd add dev branch
+4d1eb18 Initial commit
+denis@MacBook-Pro-Denis project % git commit -am 'add bla-bla code 2'
+[first-feature 9aca0a8] add bla-bla code 2
+ 1 file changed, 1 insertion(+)
+denis@MacBook-Pro-Denis project % echo 'change' >> bla-bla.txt 
+denis@MacBook-Pro-Denis project % git commit -am "add bla-bla 3'
+dquote> 
+dquote> 
+dquote> q
+dquote> 
+dquote> 
+dquote> '
+dquote> '
+dquote> "
+[first-feature 52c6048] add bla-bla 3'
+ 1 file changed, 1 insertion(+)
+denis@MacBook-Pro-Denis project % git log --oneline
+52c6048 (HEAD -> first-feature) add bla-bla 3'
+9aca0a8 add bla-bla code 2
+11f53c4 (origin/first-feature) add bla-bla code
+f6fc695 (origin/master, origin/feature, origin/HEAD, master) add dir code
+faa771e Update dev-README.md
+d0fc5fd add dev branch
+4d1eb18 Initial commit
+denis@MacBook-Pro-Denis project % git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+denis@MacBook-Pro-Denis project % git branch
+  first-feature
+* master
+denis@MacBook-Pro-Denis project % git merge first-feature --squash
+Updating f6fc695..52c6048
+Fast-forward
+Squash commit -- not updating HEAD
+ bla-bla.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 bla-bla.txt
+denis@MacBook-Pro-Denis project % git log --oneline               
+f6fc695 (HEAD -> master, origin/master, origin/feature, origin/HEAD) add dir code
+faa771e Update dev-README.md
+d0fc5fd add dev branch
+4d1eb18 Initial commit
+denis@MacBook-Pro-Denis project % git checkout first-feature      
+Switched to branch 'first-feature'
+Your branch is ahead of 'origin/first-feature' by 2 commits.
+  (use "git push" to publish your local commits)
+denis@MacBook-Pro-Denis project % git log --oneline         
+52c6048 (HEAD -> first-feature) add bla-bla 3'
+9aca0a8 add bla-bla code 2
+11f53c4 (origin/first-feature) add bla-bla code
+f6fc695 (origin/master, origin/feature, origin/HEAD, master) add dir code
+faa771e Update dev-README.md
+d0fc5fd add dev branch
+4d1eb18 Initial commit
+denis@MacBook-Pro-Denis project % git checkout master       
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+denis@MacBook-Pro-Denis project % git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis project % git merge first-feature --squash
+Updating f6fc695..52c6048
+Fast-forward
+Squash commit -- not updating HEAD
+ bla-bla.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 bla-bla.txt
+denis@MacBook-Pro-Denis project % git status                      
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   bla-bla.txt
+
+denis@MacBook-Pro-Denis project % git reset --hard
+HEAD is now at f6fc695 add dir code
+denis@MacBook-Pro-Denis project % git status      
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis project % git log --oneline               
+f6fc695 (HEAD -> master, origin/master, origin/feature, origin/HEAD) add dir code
+faa771e Update dev-README.md
+d0fc5fd add dev branch
+4d1eb18 Initial commit
+denis@MacBook-Pro-Denis project % git checkout first-feature      
+Switched to branch 'first-feature'
+Your branch is ahead of 'origin/first-feature' by 2 commits.
+  (use "git push" to publish your local commits)
+denis@MacBook-Pro-Denis project % git log --oneline         
+52c6048 (HEAD -> first-feature) add bla-bla 3'
+9aca0a8 add bla-bla code 2
+11f53c4 (origin/first-feature) add bla-bla code
+f6fc695 (origin/master, origin/feature, origin/HEAD, master) add dir code
+faa771e Update dev-README.md
+d0fc5fd add dev branch
+4d1eb18 Initial commit
+denis@MacBook-Pro-Denis project % git rebase -i HEAD~3
+hint: Waiting for your editor to close the file... error: There was a problem with the editor 'vi'.
+denis@MacBook-Pro-Denis project % git rebase -i HEAD~3
+Successfully rebased and updated refs/heads/first-feature.
+denis@MacBook-Pro-Denis project % git log --oneline   
+52c6048 (HEAD -> first-feature) add bla-bla 3'
+9aca0a8 add bla-bla code 2
+11f53c4 (origin/first-feature) add bla-bla code
+f6fc695 (origin/master, origin/feature, origin/HEAD, master) add dir code
+faa771e Update dev-README.md
+d0fc5fd add dev branch
+4d1eb18 Initial commit
+denis@MacBook-Pro-Denis project % git status          
+On branch first-feature
+Your branch is ahead of 'origin/first-feature' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+denis@MacBook-Pro-Denis project % git rebase -i HEAD~3
+hint: Waiting for your editor to close the file... error: There was a problem with the editor 'vi'.
+denis@MacBook-Pro-Denis project % git rebase -i HEAD~3
+hint: Waiting for your editor to close the file... error: There was a problem with the editor 'vi'.
+denis@MacBook-Pro-Denis project % git rebase -i HEAD~3
+Successfully rebased and updated refs/heads/first-feature.
+denis@MacBook-Pro-Denis project % git log --oneline   
+0168de2 (HEAD -> first-feature) add bla-bla code
+f6fc695 (origin/master, origin/feature, origin/HEAD, master) add dir code
+faa771e Update dev-README.md
+d0fc5fd add dev branch
+4d1eb18 Initial commit
+denis@MacBook-Pro-Denis project % ls 
+README.md	bla-bla.txt	code		dev-README.md
+denis@MacBook-Pro-Denis project % car bla-bla.txt 
+zsh: command not found: car
+denis@MacBook-Pro-Denis project % cat bla-bla.txt 
+new content
+change
+denis@MacBook-Pro-Denis project % git push --force
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 358 bytes | 358.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:Gelrush/project.git
+ + 11f53c4...0168de2 first-feature -> first-feature (forced update)
+denis@MacBook-Pro-Denis project % cd ..
+denis@MacBook-Pro-Denis Desktop % 
