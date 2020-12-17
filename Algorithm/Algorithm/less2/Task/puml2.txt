@@ -1,0 +1,16 @@
+@startuml
+start
+
+: result = 0 ]
+: i = 0 ]
+
+while (i < 10) is (да)
+    : i++ ;
+    : result += i ;
+    
+endwhile (нет)
+
+: result >
+
+end
+@enduml

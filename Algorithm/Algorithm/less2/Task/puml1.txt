@@ -1,0 +1,27 @@
+@startuml
+start
+
+: number <
+
+if (number == 0) then (да)
+    : false >
+    end
+endif 
+
+: last = √number ]
+: i = 2 ]
+
+
+while (i < last) is (да)
+    if (i % number == 0) then (да)
+        : false >
+        end
+    endif
+
+    : i++ ;
+endwhile (нет)
+
+: true >
+
+end
+@enduml
