@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/denis/Desktop/C++/lession4/homework/include/categorizer.hpp
+iostream
+-
+fstream
+-
+cstring
+-
+
+/home/denis/Desktop/C++/lession4/homework/src/categorizer.cpp
+categorizer.hpp
+/home/denis/Desktop/C++/lession4/homework/src/categorizer.hpp
+

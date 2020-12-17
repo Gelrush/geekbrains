@@ -1,0 +1,3 @@
+/home/denis/Desktop/C++/lession4/categorizer/build/CMakeFiles/rebuild_cache.dir
+/home/denis/Desktop/C++/lession4/categorizer/build/CMakeFiles/edit_cache.dir
+/home/denis/Desktop/C++/lession4/categorizer/build/CMakeFiles/categorizer.dir
