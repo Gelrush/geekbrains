@@ -1,0 +1,3 @@
+/Users/denis/Desktop/TempC++/lession1/01_program/build/CMakeFiles/rebuild_cache.dir
+/Users/denis/Desktop/TempC++/lession1/01_program/build/CMakeFiles/edit_cache.dir
+/Users/denis/Desktop/TempC++/lession1/01_program/build/CMakeFiles/program.dir

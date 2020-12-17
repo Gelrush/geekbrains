@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/homework.h
+
+../include/program.h
+iostream
+-
+
+/Users/denis/Desktop/TempC++/lession1/01_program/src/Hello.cpp
+program.h
+/Users/denis/Desktop/TempC++/lession1/01_program/src/program.h
+homework.h
+/Users/denis/Desktop/TempC++/lession1/01_program/src/homework.h
+

@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/03_head.h
+
+/Users/denis/Desktop/TempC++/lession2/src/05_Tasks.cpp
+iostream
+-
+03_head.h
+/Users/denis/Desktop/TempC++/lession2/src/03_head.h
+
