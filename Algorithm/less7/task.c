@@ -1,18 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+//=============================================================
+//===========================Supp Code=========================
+//=============================================================
 #define T char
 #define true 1 == 1
 #define false 1 != 1
 typedef int boolean;
-
-const unsigned char option1 = 0x01; // шестнадцатеричный литерал для 0000 0001
-const unsigned char option2 = 0x02; // шестнадцатеричный литерал для 0000 0010
-const unsigned char option3 = 0x04; // шестнадцатеричный литерал для 0000 0100
-const unsigned char option4 = 0x08; // шестнадцатеричный литерал для 0000 1000
-const unsigned char option5 = 0x10; // шестнадцатеричный литерал для 0001 0000
-const unsigned char option6 = 0x20; // шестнадцатеричный литерал для 0010 0000
-const unsigned char option7 = 0x40; // шестнадцатеричный литерал для 0100 0000
-const unsigned char option8 = 0x80; // шестнадцатеричный литерал для 1000 0000
 
 typedef struct Node {
 	T dat;
@@ -51,7 +46,6 @@ boolean push(Stack *stack, T value)
 T pop(Stack *stack)
 {
 	if (stack->size == 0) {
-		printf("Stack is empty\n");
 		return -1;
 	}
 	Node *tmp = stack->head;
@@ -63,61 +57,114 @@ T pop(Stack *stack)
 	return data;
 }
 
-void printOLStackNode(Node *n)
+
+typedef struct OLNode {
+	int dat;
+	struct OLNode *next;
+} OLNode;
+
+typedef struct {
+	OLNode *head;
+	int size;
+} OLList;
+
+void InitOLList(OLList* lst) 
 {
-	if (n == NULL) {
-		printf("");
-		return;
-	}
-	printf("%c", n->dat);
+	lst->head = NULL;
+	lst->size = 0;
 }
 
-void printOLStackList(Stack *stack) 
+void InsertOLList(OLList *lst, int data)
 {
-	Node *current = stack->head;
+	OLNode *new = (OLNode*) malloc(sizeof(OLNode));
+	new->dat = data;
+	new->next = NULL;
+
+	OLNode *current = lst->head;
+	if (current == NULL) {
+		lst->head = new;
+		lst->size++;
+		return;
+	} else {
+		while (current->next != NULL) {
+			current = current->next;
+		}		
+		current->next = new;
+		lst->size++;
+	}
+}
+
+OLNode* RmOLList(OLList *lst, int data)		
+{
+	OLNode *current = lst->head;
+	OLNode *parent = NULL;
 	if (current == NULL)
-		printOLStackNode(current);
+		return NULL;
+
+	while (current->next != NULL && current->dat != data) {
+		parent = current;
+		current = current->next;
+	}
+	if (current->dat != data)		
+		return NULL;
+
+	if (current == lst->head) {		
+		lst->head = current->next;
+		lst->size--;
+		return current;
+	}
+	parent->next = current->next;	
+	lst->size--;
+	return current;
+}
+
+void PrintOLNode(OLNode *n)
+{
+	if (n == NULL) {
+		printf("[] ");
+		return;
+	}
+	printf("[%d] ", n->dat);
+}
+
+void PrintOLList(OLList *lst) 
+{
+	OLNode *current = lst->head;
+	if (current == NULL)
+		PrintOLNode(current);
 	else {
 		do {
-			printOLStackNode(current);
+			PrintOLNode(current);
 			current = current->next;
 		} while (current != NULL);
 	}
-	printf("\tSize: %d \n", stack->size);
+	printf("Size: %d \n", lst->size);
 }
 
-
-
-
+//=============================================================
+//=========================Task 1==============================
+//=============================================================
 typedef struct Options {
-	char sym;
-	unsigned char flags;
-	unsigned char point;
+	char sym1;
+	char sym2;
+	unsigned char flags;				// bit state
+	unsigned char point;				// bit flag
 } Options;
 
-Options* initOpt(char sym)
+Options* initOpt(char sym1, char sym2)
 {
 	Options *opt = (Options*) malloc(sizeof(Options));
 
-	opt->sym = sym;
-	opt->flags = option1;
+	opt->sym1 = sym1;
+	opt->sym2 = sym2;
+	opt->flags = 0x01;
 	opt->point = 0;
 
 	return opt;
 }
 
 
-Options *btk1;
-Options *btk2;
-Options *btk3;
-
-
-
-
-
-
-
-void corrExp(Stack *st)
+void corrExp(Stack *st, Options **arr)
 {
 	char tmp;
 	while (true) {
@@ -125,34 +172,129 @@ void corrExp(Stack *st)
 		if (tmp == -1) 
 			return;
 
-		
+		int i = 0;
+		while (arr[i] != NULL) {
+			if (tmp == arr[i]->sym2) {
+				arr[i]->point |= arr[i]->flags;
+				arr[i]->flags *= 2;
+			}
+			if (tmp == arr[i]->sym1) {
+				if (arr[i]->flags != 1) 
+					arr[i]->flags /= 2;
+				else 
+					arr[i]->flags -= 2;
+
+				arr[i]->point ^= arr[i]->flags;
+			}
+			i++;
+		}
+	}
+}
+
+void initBtkCheck(Options **arr, const char* syms)
+{
+	int i = 0;
+	while (syms[i] != '\0') {
+		arr[i / 2] = initOpt(syms[i], syms[i + 1]);
+		i += 2;
+		arr[i / 2] = NULL;
 	}
 }
 
 
 
+//=============================================================
+//=========================Task 2==============================
+//=============================================================
+void copyOLList(OLList *lstFirst, OLList *lstSecond)		// copy by value
+{
+	OLNode *currentSec = lstSecond->head;
+	while (currentSec != NULL) {
+		InsertOLList(lstFirst, currentSec->dat);
+		currentSec = currentSec->next;
+		
+	}
+}
+
+void replaceOLList(OLList *lstFirst, OLList *lstSecond)		// copy pointers
+{
+	OLNode *tailFirst = lstFirst->head;
+	while (tailFirst->next != NULL)
+		tailFirst = tailFirst->next;
+
+	tailFirst->next = lstSecond->head;
+	lstFirst->size += lstSecond->size;
+}
+
+
+//=============================================================
+//=========================Task 3==============================
+//=============================================================
+int recDefSort(OLNode* lstNode)
+{
+	if (lstNode->next == NULL)
+		return 1;
+	
+	if (lstNode->dat < lstNode->next->dat)
+		return recDefSort(lstNode->next);
+	
+	return 0;
+}
+
+//=============================================================
+//=========================Main================================
+//=============================================================
 int main(int argc, char const *argv[])
 {
-	Stack *stack = initStack();
-	btk1 = initOpt('(');
-	btk2 = initOpt('[');
-	btk3 = initOpt('{');
-
-	//char line[255] = "";
+	//*********************************************************
+	const char *btks = "()[]{}";
+	Options *arrOpt[64];
+	initBtkCheck(arrOpt, btks);				// Packing brackets into a struct
+	
+	Stack *stack = initStack();				// Enter example in stack
 	char entr;
+	printf("Enter example:\n");
 	do {
 		scanf("%c", &entr);
 		push(stack, entr);
 	} while (entr != '\n');
-	//printOLStackList(stack);
-	
-	corrExp(stack);
+
+	corrExp(stack, arrOpt);					// Base func
+
+	int i = 0;								// Result output
+	while (arrOpt[i] != NULL) {				
+		printf("Brackets %c%c are %s\n", arrOpt[i]->sym1, arrOpt[i]->sym2, 
+			(arrOpt[i]->point == 0) ? "correct" : "missing!!!");
+		i++;
+	}
+
+	//*********************************************************
+	OLList *lstFirst = (OLList*) malloc(sizeof(OLList));
+	InitOLList(lstFirst);
+	OLList *lstSecond = (OLList*) malloc(sizeof(OLList));
+	InitOLList(lstSecond);
+
+	for (int i = 0; i < 5; ++i) {
+		InsertOLList(lstFirst, i * 2);
+		InsertOLList(lstSecond, i * 3);
+	}
+	printf("List one: ");
+	PrintOLList(lstFirst);
+	printf("List two: ");
+	PrintOLList(lstSecond);
+
+	copyOLList(lstFirst, lstSecond);
+	printf("List one after copy: ");
+	PrintOLList(lstFirst);
+
+	replaceOLList(lstFirst, lstSecond);
+	printf("List one after replace: ");
+	PrintOLList(lstFirst);
+
+	//*********************************************************
+	printf("List \"First\" is%s sorted\n", recDefSort(lstFirst->head) ? "" : " not");
+	printf("List \"Second\" is%s sorted\n", recDefSort(lstSecond->head) ? "" : " not");
 
 
-	
-
-
-	//char *line = "[2/{5*(4+7)}]";
-	//printf("%c\n", line[3]);
 	return 0;
 }
