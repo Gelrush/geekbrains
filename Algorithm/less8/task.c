@@ -9,10 +9,10 @@
 typedef int boolean;
 
 //==============================Supp func==============================
-typedef struct Node {
+typedef struct Nodet {
 	int key;
-	struct Node *left;
-	struct Node *right;
+	struct Nodet *left;
+	struct Nodet *right;
 } TreeNode;
 
 TreeNode* treeInsert(TreeNode **t, int data) 
@@ -149,7 +149,7 @@ boolean checkBalance(TreeNode *root, int count, int max)
 }
 
 
-boolean resultStack;
+boolean resultStack = true;
 
 void chResult(int max, Stack* st)
 {
@@ -162,17 +162,18 @@ boolean checkBalanceStack(TreeNode *root, int max, Stack* st)
 {
 	if (root) {
 		push(st, root->key);
-		if (root-left || root-right) {
+		if (root->left || root->right) {
 			if(root->left)
-				checkBalanceStack(root-left, max, st);
+				checkBalanceStack(root->left, max, st);
 			else chResult(max, st);
 
 			if (root->right)
-				checkBalanceStack(root-right, max, st);
+				checkBalanceStack(root->right, max, st);
 			else chResult(max, st);
 			
 		} else chResult(max, st);
 	}
+    return resultStack;
 }
 
 TreeNode* fillRandTrees(int SZtree, int SZnode, int from, int to)
@@ -270,8 +271,11 @@ int main(int argc, char const *argv[])
 	for (int i = 0; i < SZtree; ++i)
 	{
 		treetmp = fillRandTrees(SZtree, SZnode, 0, 100);
-		result = true;
-		if (checkBalance(treetmp, 0, maxNodes)) {
+        resultStack = true;
+        Stack* st = (Stack*) malloc(sizeof(Stack));
+        init(st);
+        
+		if (checkBalanceStack(treetmp, maxNodes, st)) {
 			printTree(treetmp);
 			puts("");
 		}
