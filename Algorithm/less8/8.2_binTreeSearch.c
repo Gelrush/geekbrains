@@ -143,8 +143,7 @@ boolean delete(TreeNode *root, int key)
 
 int main(int argc, char const *argv[])
 {
-	TreeNode *tree = NULL;
-	treeInsert(tree, 10);
+	TreeNode *tree = treeInsert(tree, 10);
 	treeInsert(tree, 8);
 	treeInsert(tree, 19);
 	treeInsert(tree, 5);
@@ -153,7 +152,7 @@ int main(int argc, char const *argv[])
 	treeInsert(tree, 21);
 
 	printTree(tree);
-	/*printf("\n");
+	printf("\n");
 
 	delete(tree, 5);
 	printTree(tree);
@@ -163,7 +162,7 @@ int main(int argc, char const *argv[])
 	printf("\n");
 	delete(tree, 8);
 	printTree(tree);
-	printf("\n");*/
+	printf("\n");
 	
 
 	return 0;

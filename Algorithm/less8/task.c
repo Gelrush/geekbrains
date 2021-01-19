@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
-#define T char
-#define true 1 == 1
+#define T int
+#define true 1 == 1			// сделать с помощью стека
 #define false 1 != 1
 typedef int boolean;
 
+//==============================Supp func==============================
 typedef struct Node {
 	int key;
 	struct Node *left;
@@ -27,7 +29,7 @@ TreeNode* treeInsert(TreeNode **t, int data)
 	if (*t == NULL) {
 		*t = newNode;
 	} else {
-		while (current->key != data) {
+		while (true) {	// current->key != data
 			parent = current;
 			if (current->key > data) {
 				current = current->left;
@@ -67,171 +69,213 @@ void printTree(TreeNode *root)
 	}
 }
 
+typedef struct Node {
+	T dat;
+	struct Node *next;
+} Node;
 
-/*boolean checkBalance(TreeNode *root, int count) 
+typedef struct {
+	Node *head;
+	int size;
+} Stack;
+
+void init(Stack *stack) 
 {
-	if (root) {
-
-		count++;
-
-		if (root->left || root->right) {
-
-
-			if (root->left) {
-				checkBalance(root->left, count);
-			} else {
-				printf("%d-l\n", count);
-				count--;
-			}
-
-
-			if (root->right) {
-				checkBalance(root->right, count);
-				count--;
-			} else {
-				printf("%d-r\n", count);
-				count--;
-			}
-
-
-		} else {
-			printf("%d-y\n", count);
-			count--;
-		}
-	}
-}*/
-
-int maxNodes(TreeNode *root)
-{
-	if (root)
-		return maxNodes(root->left) + 1;
-	return 0;
+	stack->head = NULL;
+	stack->size = 0;
 }
 
-boolean checkBalance(TreeNode *root, int max)
-{
-	int count = 0;
-	TreeNode *current = root;
-	TreeNode *parent = root;
 
-	while (true) {
-		parent = current;
-		current = current->left;
-		if (current == NULL) {
-			current = parent->right;
-		}
+boolean push(Stack *stack, T value)
+{
+	Node *tmp = (Node*) malloc(sizeof(Node));
+	if (tmp == NULL) {							
+		printf("Stack overflow\n");
+		return false;
 	}
+	tmp->dat = value;
+	tmp->next = stack->head;
+	stack->head = tmp;
+	stack->size++;
+	return true;
 }
 
-/*boolean checkBalance(TreeNode *root, int count, int max) 
+T pop(Stack *stack)
+{
+	if (stack->size == 0) {
+		printf("Stack is empty\n");
+		return -1;
+	}
+	Node *tmp = stack->head;
+	T data = stack->head->dat;
+
+	stack->head = stack->head->next;
+	stack->size--;
+	free(tmp);
+	return data;
+}
+
+//==============================Task 1==============================
+boolean result;
+boolean checkBalance(TreeNode *root, int count, int max) 
 {
 	int x;
 	if (root) {
 		count++;
-		if (root->left || root->right) {
-
+		if (root->left || root->right) {		
 			if (root->left)
-				checkBalance(root->left, count, max);
-			else {
-				x = abs(max - count--);
-				printf("%d\n", x);
-				if (x > 1) {
-					printf("%d\n", x);
+					result = checkBalance(root->left, count, max);
+			else { 
+				if (max - count > 1 || max - count < 0) 
 					return false;
-				}
+				count--;
 			}
-
+			
 			if (root->right) 
-				checkBalance(root->right, count--, max);
-			else {
-				x = abs(max - count--);
-				printf("%d\n", x);
-				if (x > 1) {
-					printf("%d\n", x);
+					result = checkBalance(root->right, count--, max);
+			else { 
+				if (max - count > 1 || max - count < 0) 
 					return false;
-				}
+				count--;
 			}
-
-		} else {
-				x = abs(max - count--);
-				printf("%d\n", x);
-				if (x > 1) {
-					printf("%d\n", x);
+		}
+		else { 
+				if (max - count > 1 || max - count < 0) 
 					return false;
-				}
+				count--;
 			}
 	}
-	return true;
-}*/
+	return result;
+}
 
-TreeNode* fillTrees(int SZtree, int SZnode)
+
+boolean resultStack;
+
+void chResult(int max, Stack* st)
 {
-	srand(time(NULL));
-	TreeNode *tmpTree = NULL;
+	if (max - st->size > 1 || max - st->size < 0)
+		resultStack = false;
+	pop(st);
+}
 
-	for (int i = 0; i < SZnode; ++i) {
-		treeInsert(&tmpTree, rand() % 100);
+boolean checkBalanceStack(TreeNode *root, int max, Stack* st)
+{
+	if (root) {
+		push(st, root->key);
+		if (root-left || root-right) {
+			if(root->left)
+				checkBalanceStack(root-left, max, st);
+			else chResult(max, st);
+
+			if (root->right)
+				checkBalanceStack(root-right, max, st);
+			else chResult(max, st);
+			
+		} else chResult(max, st);
 	}
+}
 
+TreeNode* fillRandTrees(int SZtree, int SZnode, int from, int to)
+{
+	TreeNode *tmpTree = NULL;
+	for (int i = 0; i < SZnode; ++i) {
+		treeInsert(&tmpTree, rand() % (to - from) + from);
+	}
 	return tmpTree;
 }
 
+//+++++++++++++++++++++++++++++++++__Answer teacher___+++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++____Non correct____+++++++++++++++++++++++++++++++++
+int countDepth(TreeNode *node) {
+    if (node == NULL) {
+        return 0;
+    }
+    int left = 0;
+    int right = 0;
+    if (node->left != NULL) {
+        left = countDepth(node->left);
+    }
+    if (node->right != NULL) {
+        right = countDepth(node->right);
+    }
+    return 1 + ((left > right) ? left : right);
+}
 
-FILE *file;
-TreeNode* balancedTree(int n) 			// n - количество узлов
-{
-	TreeNode *newNode;
-	int x;
-	int nL;
-	int nR;
+boolean isBalanced(TreeNode *root) {
+	printf("\nleft=%d, right=%d\n", countDepth(root->left), countDepth(root->right));
+    return abs(countDepth(root->left) - countDepth(root->right)) <= 1;
+}
 
-	if (n == 0) {
-		return NULL;
-	} else {
-		fscanf(file, "%d", &x);			// считываем из файла данные
-		nL = n / 2;						// при записывании нового узла 
-		nR = n - nL - 1;				// рассчитывается равное количество потомков по 2м веткам
+//==============================Task 2==============================
+boolean recBinSearch(TreeNode *root, int value) 	
+{										
+	if (root) {
+		if (value == root->key) 
+			return true;
 
-		newNode = (TreeNode*) malloc(sizeof(TreeNode));
-		newNode->key = x;
-		newNode->left = balancedTree(nL);
-		newNode->right = balancedTree(nR);
-	}
-	return newNode;
+		if (value < root->key)
+			recBinSearch(root->left, value);
+		else
+			recBinSearch(root->right, value);
+
+	} else return false;
 }
 
 int main(int argc, char const *argv[])
 {
+	//==============================Task 1==============================
+	srand(time(NULL));
 	const int SZtree = 50;
-	const int SZnode = 15;
+	const int SZnode = 5;
 	TreeNode *tree[SZtree];
 	int countBalance = 0;
+	int maxNodes = (int) log2(SZnode) + 1;
+	
+	int countBalanceT = 0;
 
 	for (int i = 0; i < SZtree; ++i) {
-		tree[i] = fillTrees(SZtree, SZnode);
-		//if ()
+		tree[i] = fillRandTrees(SZtree, SZnode, 0, 100);
+		result = true;
+		countBalance += checkBalance(tree[i], 0, maxNodes);
+
+		countBalanceT += isBalanced(tree[i]);
 	}
-
-
-	int max = maxNodes(tree[0]);
-	int result = 0;
-	printf("Max = %d\n", max);
+	printf("==============================Task 1==============================\n");
+	printf("Balanced %d%% of %d trees\n", countBalance * 100 / SZtree, SZtree);
+	printf("From teacher. Balanced %d%% of %d trees\n", countBalanceT * 100 / SZtree, SZtree);
+	
+	//==============================Task 2==============================
+	printf("==============================Task 2==============================\n");
 	printTree(tree[0]);
-	puts("");
-	printf("%s\n", checkBalance(tree[0], 0, max) ? "true" : "false");
-	//checkBalance(tree[0], 0, max);
+	printf("\nNumber 15 is %sfound\n", recBinSearch(tree[0], 15) ? "" : "not ");
 
+	printf("\n==============================Check solutions==============================\n");
+	printf("My try. Balanced is %s\n", checkBalance(tree[0], 0, maxNodes) ? "true" : "false");
+	printf("From teacher. Balanced is %s\n", isBalanced(tree[0]) ? "true" : "false");
+
+	printf("==============================Test==============================\n");
+	TreeNode *treetmp = NULL;
+	treeInsert(&treetmp, 62);
+	treeInsert(&treetmp, 30);
+	treeInsert(&treetmp, 80);
+	treeInsert(&treetmp, 79);
+	treeInsert(&treetmp, 66);
 	
-	file = fopen("balance.txt", "r");
-	TreeNode *treeb = NULL;
-	treeb = balancedTree(SZnode);
-	printTree(treeb);
+	result = true;
+	printTree(treetmp);
 	puts("");
-	max = maxNodes(treeb);
-	printf("Max = %d\n", max);
-	printf("%s\n", checkBalance(treeb, 0, max) ? "true" : "false");
-	//checkBalance(treeb, 0, max);
-	
+	printf("Balanced is %s\n", checkBalance(treetmp, 0, maxNodes) ? "true" : "false");
+
+	printf("==============================Test Cycle==============================\n");
+	for (int i = 0; i < SZtree; ++i)
+	{
+		treetmp = fillRandTrees(SZtree, SZnode, 0, 100);
+		result = true;
+		if (checkBalance(treetmp, 0, maxNodes)) {
+			printTree(treetmp);
+			puts("");
+		}
+	}
 
 
 

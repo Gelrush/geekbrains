@@ -163,8 +163,8 @@ void inOrderTravers(TreeNode *root) 	// прохождение всего дер
 void postOrderTravers(TreeNode *root) 	// прохождение всего дерева: Левое - правый - корень
 {										// обратный обход - для полного удаления дерева
 	if (root) {
-		inOrderTravers(root->left);
-		inOrderTravers(root->right);
+		postOrderTravers(root->left);
+		postOrderTravers(root->right);
 		printf("%2d ", root->key);
 	}
 }
