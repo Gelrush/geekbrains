@@ -76,7 +76,7 @@ void printArray(int* array, int size)
 }
 
 /*==========================================================*/
-typedef bool (*validateFcn)(int, int);
+typedef bool (*validateFcn)(int, int); // псевдоним validateFcn для указателя
 using validateFcn = bool(*)(int, int); // или легче type alias
 
 bool validate(int a, int b, bool (*fcnPtr)(int, int)); // фу, какой синтаксис
